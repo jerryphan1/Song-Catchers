@@ -26,6 +26,11 @@ In addition, this project will include:
 
 ![Wireframe Scheme](song-catcher.png)
 
+- Links include Github repo, and LinkedIn
+- Icons will have toggle feature
+- Music information displays graphs and other visualizations 
+
+
 ## Technologies, Libraries, APIs
 
 - [lyrics.ovh](https://lyricsovh.docs.apiary.io/#reference/0/lyrics-of-a-song/search)
