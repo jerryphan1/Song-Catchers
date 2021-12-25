@@ -1,3 +1,11 @@
-p {
-  color: red;
+#main-container{
+  display: flex;
+  padding: 10px;
+  border: 1px;
+  border-style: dashed;
+  justify-content: space-between;
+}
+
+#left-container{
+  display: flex;
 }
