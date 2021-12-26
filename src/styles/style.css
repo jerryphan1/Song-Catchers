@@ -43,7 +43,7 @@ h2 {
   /* justify-content: center; */
   align-items: center;
   flex-direction: column;
-  font-size: 1.125em;
+  font-size: 18px;
   line-height: 1.6;
   position: relative;
   border: 1px solid black;
@@ -52,8 +52,8 @@ h2 {
 }
 
 .content {
-  /* width: 40vw */
-  width: 400px;
+  /* width: 40vw; */
+  width: 70%;
   padding: 15px;
   position: relative;
 }
@@ -150,7 +150,6 @@ h2 {
   width: 200px;
   font-size: 14px;
   text-overflow: wrap;
-  /* display: block; */
 }
 
 #right-container{
@@ -158,5 +157,6 @@ h2 {
   text-align: center;
   border: 1px solid black;
   border-style: dashed;
+  padding: 10px;
   margin-right: auto;
 }
