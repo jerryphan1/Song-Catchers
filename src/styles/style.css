@@ -18,14 +18,36 @@ h2 {
 #left-container{
   display: flex;
   flex-direction: column;
-  padding-top: 90px;
-  margin-right: auto;
+  padding-top: 10%;
   border: 1px;
   border-style: dashed;
+  width: 15%;
 }
 
-.left-ul li{
-  padding: 20px 0;
+.collapsible{
+  background-color: rgb(134, 118, 118);
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: rgb(94, 87, 100);
+}
+
+.left-content{
+  text-align: center;
+  width: auto;
+  padding: 0 6px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  background-color: #f1f1f1;
+  font-size: 14px;
 }
 
 
@@ -36,6 +58,7 @@ h2 {
 
 .fab {
   color: black;
+  font-size: 28px;
 }
 
 #middle-container{
@@ -45,15 +68,16 @@ h2 {
   flex-direction: column;
   font-size: 18px;
   line-height: 1.6;
-  position: relative;
+  /* position: relative; */
   border: 1px solid black;
   border-style: dashed;
-  margin: auto;
+  margin: 5px auto;
+  width: 55vw;
 }
 
 .content {
   /* width: 40vw; */
-  width: 70%;
+  width: 40vw;
   padding: 15px;
   position: relative;
 }
@@ -158,5 +182,5 @@ h2 {
   border: 1px solid black;
   border-style: dashed;
   padding: 10px;
-  margin-right: auto;
+  margin: 5px auto;
 }
