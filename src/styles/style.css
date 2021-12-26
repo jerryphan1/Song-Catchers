@@ -6,7 +6,7 @@ h2 {
   display: flex;
   border: 1px;
   border-style: dashed;
-  justify-content: space-between;
+  /* justify-content: space-evenly; */
   /* align-items: center; */
   background-color: lightgray;
 }
@@ -19,7 +19,7 @@ h2 {
   display: flex;
   flex-direction: column;
   padding-top: 90px;
-  margin: 0px;
+  margin-right: auto;
   border: 1px;
   border-style: dashed;
 }
@@ -46,12 +46,15 @@ h2 {
   font-size: 1.125em;
   line-height: 1.6;
   position: relative;
+  border: 1px solid black;
+  border-style: dashed;
+  margin: auto;
 }
 
 .content {
   /* width: 40vw */
-  width: 475px;
-  padding: 20px;
+  width: 400px;
+  padding: 15px;
   position: relative;
 }
 
@@ -68,8 +71,8 @@ h2 {
 
 .search-bar-input {
   flex-grow: 1;
-  font-size: 22px;
-  padding: 0 22px;
+  font-size: 20px;
+  padding: 0 20px;
   border: 0;
   background: none;
   outline: 0;
@@ -129,14 +132,13 @@ h2 {
 }
 
 #middle-bottom ul{
-  padding: 5px;
-  margin: 10px;
+  margin: 5px;
   border: 1px solid black;
   border-style: dashed;
 }
 
 .middle-ul li{
-  margin: 20px 0px;
+  margin: 10px 0px;
 }
 
 .fa-sort:hover {
@@ -148,4 +150,13 @@ h2 {
   width: 200px;
   font-size: 14px;
   text-overflow: wrap;
+  /* display: block; */
+}
+
+#right-container{
+  display: flex;
+  text-align: center;
+  border: 1px solid black;
+  border-style: dashed;
+  margin-right: auto;
 }
