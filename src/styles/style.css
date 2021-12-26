@@ -39,15 +39,21 @@ h2 {
   background-color: rgb(94, 87, 100);
 }
 
+.active + div {
+  display: block;
+}
+
 .left-content{
   text-align: center;
   width: auto;
   padding: 0 6px;
-  max-height: 0;
+  /* max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease-out;
+  transition: max-height 0.3s ease-out; */
   background-color: #f1f1f1;
   font-size: 14px;
+  display: none;
+  /* overflow: auto; */
 }
 
 
