@@ -78,7 +78,7 @@ h2 {
   border: 1px solid black;
   border-style: dashed;
   margin: 5px auto;
-  width: 55vw;
+  width: 55%;
 }
 
 .content {
@@ -177,7 +177,7 @@ h2 {
 }
 
 .test {
-  width: 200px;
+  width: 100%;
   font-size: 14px;
   text-overflow: wrap;
 }
