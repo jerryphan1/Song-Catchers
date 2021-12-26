@@ -129,16 +129,23 @@ h2 {
 }
 
 #middle-bottom ul{
-  padding: 10px;
-  margin: 10px 40px;
-  cursor: pointer;
+  padding: 5px;
+  margin: 10px;
   border: 1px solid black;
   border-style: dashed;
 }
 
+.middle-ul li{
+  margin: 20px 0px;
+}
+
+.fa-sort:hover {
+  color: white;
+  cursor: pointer;
+}
+
 .test {
   width: 200px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: 14px;
+  text-overflow: wrap;
 }
