@@ -155,14 +155,11 @@ h2 {
   width: 80%;
 }
 
-#middle-bottom, #middle-bottom tr{
+#table-content tr{
   display: flex;
   justify-content: center;
   text-align: center;
   width: 100%;
-}
-
-#middle-bottom tr{
   margin: 0px;
   border: 1px solid black;
   border-style: dashed;
@@ -171,6 +168,7 @@ h2 {
 .middle-titles{
   margin: 5px 0px;
   width: 100%;
+  font-weight: 550;
 }
 
 .fa-sort:hover {
