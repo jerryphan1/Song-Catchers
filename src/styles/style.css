@@ -155,20 +155,22 @@ h2 {
   width: 80%;
 }
 
-#middle-bottom {
+#middle-bottom, #middle-bottom tr{
   display: flex;
   justify-content: center;
   text-align: center;
+  width: 100%;
 }
 
-#middle-bottom ul{
-  margin: 5px;
+#middle-bottom tr{
+  margin: 0px;
   border: 1px solid black;
   border-style: dashed;
 }
 
-.middle-ul li{
-  margin: 10px 0px;
+.middle-titles{
+  margin: 5px 0px;
+  width: 100%;
 }
 
 .fa-sort:hover {
@@ -178,6 +180,8 @@ h2 {
 
 .test {
   width: 100%;
+  margin: 5px 0px;
+  padding: 0 5px;
   font-size: 14px;
   text-overflow: wrap;
 }
