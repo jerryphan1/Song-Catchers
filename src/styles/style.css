@@ -200,3 +200,7 @@ h2 {
   height: 40%;
   border: 1px solid black;
 }
+
+.chart:hover {
+  background-color: pink;
+}
