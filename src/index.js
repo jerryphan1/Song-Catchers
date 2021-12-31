@@ -63,9 +63,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
 //   .then(data => console.log(data))
 //   .catch(err => console.log(err))
 
-
+window.addEventListener('DOMContentLoaded', (event) => {
 const APIController = (function() {
-
+  console.log('testi')
   const clientId = '';
   const clientSecret = '';
 
@@ -93,7 +93,7 @@ const APIController = (function() {
 
     const data = await result.json();
     // return data.artists.items;
-    return data;
+    console.log(data)
   }
 
   return {
@@ -106,4 +106,5 @@ const APIController = (function() {
     }
   }
 
-})();
+})()
+});
