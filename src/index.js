@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   let fetch = new Fetch();
   util.makeGraph()
   util.collapseLeftBar()
-  fetch.getToken()
+  // fetch.getToken()
+  fetch.getSong()
 });
 
 
