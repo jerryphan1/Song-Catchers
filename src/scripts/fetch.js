@@ -14,14 +14,16 @@ export class Fetch {
       return resp.json();
     }).then(function (data) {
       console.log('token', data);
-      return fetch('https://api.spotify.com/v1/search?q=last%20cup%20of%20coffee&type=track&market=ES&limit=1', {
+      return fetch('https://api.spotify.com/v1/search?q=valkyrae&type=artist&market=ES&limit=1', {
         headers: {
           'Authorization': data.token_type + ' ' + data.access_token,
           'Content-Type': 'application/x-www-form-urlencoded'
         }
       });
+    }).then(function (resp) {
+      return resp.json();
     }).then(function(data) {
-      console.log(data);
+      console.log('test',data);
     }).catch(function(err) {
       console.log('something went wrong', err)
     });
