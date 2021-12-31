@@ -3,8 +3,10 @@ import {Util} from './scripts/util.js';
 document.addEventListener('DOMContentLoaded', (event) => {
   console.log('DOM');
   let util = new Util();
+  let fetch = new Fetch();
   util.makeGraph()
   util.collapseLeftBar()
+  fetch.getToken()
 });
 
 
@@ -21,26 +23,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
 //   .then(data => console.log(data))
 //   .catch(err => console.log(err))
 
-var client_id = '661979470da84b9ead5db04fcede6ada';
-var client_secret = '9a759d370dc34783b8e30e0375999dca';
 
-var authOptions = {
-  url: 'https://accounts.spotify.com/api/token',
-  headers: {
-    'Authorization': 'Basic ' + (Buffer.from(client_id + ':' + client_secret).toString('base64'))
-  },
-  form: {
-    grant_type: 'client_credentials'
-  },
-  json: true
-};
 
-request.post(authOptions, function(error, response, body) {
-  console.log('test')
-  if (!error && response.statusCode === 200) {
-    var token = body.access_token;
-  }
-});
+// var Buffer = require('buffer');
+// console.log(Buffer)
+
+// var authOptions = {
+//   url: 'https://accounts.spotify.com/api/token',
+//   headers: {
+//     'Authorization': 'Basic ' + (Buffer.from(client_id + ':' + client_secret).toString('base64'))
+//   },
+//   form: {
+//     grant_type: 'client_credentials'
+//   },
+//   json: true
+// };
+
+// request.post(authOptions, function(error, response, body) {
+//   console.log('test')
+//   if (!error && response.statusCode === 200) {
+//     var token = body.access_token;
+//   }
+// });
 
 
 
