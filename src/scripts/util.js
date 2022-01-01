@@ -65,6 +65,11 @@ export class Util {
           th.classList.add('test')
           th.append(values[i][key]) 
           tr.append(th)
+        } else {
+          const th = document.createElement('th')
+          th.classList.add('hide-artist-id')
+          th.append(values[i][key]) 
+          tr.append(th)
         }
       })
       table.append(tr)

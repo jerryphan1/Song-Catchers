@@ -188,6 +188,10 @@ h2 {
   text-overflow: wrap;
 }
 
+.hide-artist-id {
+  display: none
+}
+
 #right-container{
   display: flex;
   text-align: center;

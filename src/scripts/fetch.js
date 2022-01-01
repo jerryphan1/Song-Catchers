@@ -38,20 +38,36 @@ export class Fetch {
       const outer = []
       for (let i = 0; i < data['tracks']['items'].length; i++) {
         const inner = {
-          artist: data['tracks']['items'][i]['artists'][0]['name'],
-          song: data['tracks']['items'][i]['name'],
-          releaseDate: data['tracks']['items'][i]['album']['release_date'],
-          artistId: data['tracks']['items'][i]['artists'][0]['id']
+          artist: data['tracks']['items'][i]['artists'][0]['name'], //artist
+          song: data['tracks']['items'][i]['name'],                //song
+          releaseDate: data['tracks']['items'][i]['album']['release_date'], //release date
+          artistId: data['tracks']['items'][i]['artists'][0]['id'] //artist id
         }
         outer.push(inner)
-        // console.log(data['tracks']['items'][i]['artists'][0]['name']) //artist
-        // console.log(data['tracks']['items'][i]['name']) //song
-        // console.log(data['tracks']['items'][i]['album']['release_date']) //release date
       }
       return outer;
     }).catch(function(err) {
       console.log('something went wrong',err)
     })
   }
+
+  async getArtist() {
+    let token = await this.getToken();
+    // let id = input.artistId
+    fetch(`https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg`, {
+      headers: {
+        'Authorization': token.token_type + ' ' + token.access_token,
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    }).then(function(resp) {
+      return resp.json();
+    }).then(function(data) {
+      console.log(data)
+      return data;
+    }).catch(function(err) {
+      console.log('something went wrong', err)
+    })
+  }
+
 }
 
