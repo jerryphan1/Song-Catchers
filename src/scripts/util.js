@@ -45,12 +45,17 @@ export class Util {
     let input = document.querySelector('.search-bar-input')
     let searchBar = document.querySelector('.search-bar')
 
-    searchBar.addEventListener('submit', (e) => {
+    searchBar.addEventListener('submit', async (e) => {
       e.preventDefault();
       //value is a string
-      console.log(input.value)
-      fetch.getTrack(input.value)
+      let tableValues = await fetch.getTrack(input.value)
+      this.makeTable(tableValues)
       input.value = ''
     })
+  }
+
+  makeTable(values){
+    console.log('inside')
+    console.log(values)
   }
 }
