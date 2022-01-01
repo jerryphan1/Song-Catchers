@@ -60,10 +60,12 @@ export class Util {
     for (let i = 0; i < values.length; i++) {
       const tr = document.createElement('tr')
       Object.keys(values[i]).forEach((key) => {
-        const th = document.createElement('th')
-        th.classList.add('test')
-        th.append(values[i][key]) 
-        tr.append(th)
+        if (key !== 'artistId') {
+          const th = document.createElement('th')
+          th.classList.add('test')
+          th.append(values[i][key]) 
+          tr.append(th)
+        }
       })
       table.append(tr)
     }

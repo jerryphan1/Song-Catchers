@@ -35,13 +35,13 @@ export class Fetch {
     }).then(function(resp) {
       return resp.json();
     }).then(function(data) {
-      // track to table
       const outer = []
       for (let i = 0; i < data['tracks']['items'].length; i++) {
         const inner = {
           artist: data['tracks']['items'][i]['artists'][0]['name'],
           song: data['tracks']['items'][i]['name'],
-          releaseDate: data['tracks']['items'][i]['album']['release_date']
+          releaseDate: data['tracks']['items'][i]['album']['release_date'],
+          artistId: data['tracks']['items'][i]['artists'][0]['id']
         }
         outer.push(inner)
         // console.log(data['tracks']['items'][i]['artists'][0]['name']) //artist
