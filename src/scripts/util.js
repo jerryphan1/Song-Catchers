@@ -58,4 +58,25 @@ export class Util {
     console.log('inside')
     console.log(values)
   }
+
+
+  // let test = [
+  //   {artist: 'Michelle Branch', title:  'All You Wanted', date :'2001-07-31'},
+  //   {artist: 'Michelle Branch', title:  'Everywhere', date :'2002-07-31'},
+  //   {artist: 'Michelle Branch', title:  'Breathe', date :'2003-07-31'}
+  
+  // ]
+  
+  // sortTable(table,column,status) {
+  //   //status would be a toggled class saying if its sorted or
+  //   return table.sort((a,b) => { 
+  //     let colA = a[column].toUpperCase();
+  //     let colB = b[column].toUpperCase();
+  //     if (status) {
+  //       return colB < colA ? -1 : colB > colA ? 1 : 0
+  //     } else {
+  //       return colA < colB ? -1 : colA > colB ? 1 : 0
+  //     }
+  //   })
+  // }
 }
