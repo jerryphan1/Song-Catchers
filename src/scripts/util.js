@@ -1,3 +1,5 @@
+import {Fetch} from './fetch.js';
+let fetch = new Fetch();
 export class Util {
   makeGraph() {
     const ctx = document.getElementById('myChart').getContext('2d')
@@ -34,15 +36,21 @@ export class Util {
   collapseLeftBar() {
     document.querySelectorAll('.collapsible').forEach((button) => {
       button.addEventListener('click', () => {
-        // let content = button.nextElementSibling;
         button.classList.toggle('active')
-        // console.log(content.style.maxHeight)
-        // if (!content.style.maxHeight){
-        //   content.style.maxHeight = content.scrollHeight + "px";
-        // } else {
-        //   content.style.maxHeight = 0;
-        // } 
       })
     })
   };
+
+  submitSong() {
+    let input = document.querySelector('.search-bar-input')
+    let searchBar = document.querySelector('.search-bar')
+
+    searchBar.addEventListener('submit', (e) => {
+      e.preventDefault();
+      //value is a string
+      console.log(input.value)
+      fetch.getTrack(input.value)
+      input.value = ''
+    })
+  }
 }

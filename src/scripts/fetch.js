@@ -13,16 +13,22 @@ export class Fetch {
     }).then(function(resp) {
       return resp.json();
     }).then(function (data) {
-      console.log('token', data);
       return data
     }).catch(function(err) {
       console.log('something went wrong', err)
     });
   }
 
-  getSong() {
-    let token = this.getToken();
-    fetch('https://api.spotify.com/v1/search?q=valkyrae&type=artist&market=ES&limit=1', {
+  async getTrack(input) {
+    let token = await this.getToken();
+    console.log(token)
+    let result = ""
+    let inputSplit = input.split(' ')
+    inputSplit.forEach((word,index) => {
+      result += word
+      if (index !== inputSplit.length - 1) result += '%20'
+    }) 
+    fetch(`https://api.spotify.com/v1/search?q=${result}&type=track&market=ES&limit=10`, {
       headers: {
         'Authorization': token.token_type + ' ' + token.access_token,
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -30,7 +36,20 @@ export class Fetch {
     }).then(function(resp) {
       return resp.json();
     }).then(function(data) {
-      console.log('song',data)
+      // track to table
+      let outer = []
+      for (let i = 0; i < data['tracks']['items'].length; i++) {
+        let inner = []
+        inner.push(data['tracks']['items'][i]['artists'][0]['name'])
+        inner.push(data['tracks']['items'][i]['name'])
+        inner.push(data['tracks']['items'][i]['album']['release_date'])
+        outer.push(inner)
+
+        // console.log(data['tracks']['items'][i]['artists'][0]['name']) //artist
+        // console.log(data['tracks']['items'][i]['name']) //song
+        // console.log(data['tracks']['items'][i]['album']['release_date']) //release date
+      }
+      console.log(outer)
     }).catch(function(err) {
       console.log('something went wrong',err)
     })
