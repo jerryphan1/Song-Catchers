@@ -59,15 +59,14 @@ export class Util {
     const table = document.querySelector('#table-content')
     for (let i = 0; i < values.length; i++) {
       const tr = document.createElement('tr')
-      for (let j = 0; j < values[i].length; j++) {
+      Object.keys(values[i]).forEach((key) => {
         const th = document.createElement('th')
         th.classList.add('test')
-        th.append(values[i][j]) 
+        th.append(values[i][key]) 
         tr.append(th)
-      }
+      })
       table.append(tr)
     }
-    console.log(table)
   }
 
   clearTable() {

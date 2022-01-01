@@ -38,17 +38,17 @@ export class Fetch {
       // track to table
       const outer = []
       for (let i = 0; i < data['tracks']['items'].length; i++) {
-        const inner = []
-        inner.push(data['tracks']['items'][i]['artists'][0]['name'])
-        inner.push(data['tracks']['items'][i]['name'])
-        inner.push(data['tracks']['items'][i]['album']['release_date'])
+        const inner = {
+          artist: data['tracks']['items'][i]['artists'][0]['name'],
+          song: data['tracks']['items'][i]['name'],
+          releaseDate: data['tracks']['items'][i]['album']['release_date']
+        }
         outer.push(inner)
         // console.log(data['tracks']['items'][i]['artists'][0]['name']) //artist
         // console.log(data['tracks']['items'][i]['name']) //song
         // console.log(data['tracks']['items'][i]['album']['release_date']) //release date
       }
       return outer;
-      // console.log(outer)
     }).catch(function(err) {
       console.log('something went wrong',err)
     })
