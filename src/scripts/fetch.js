@@ -54,3 +54,18 @@ export class Fetch {
     })
   }
 }
+
+let test = [
+  {artist: 'Michelle Branch', title:  'All You Wanted', date :'2001-07-31'},
+  {artist: 'Michelle Branch', title:  'Everywhere', date :'2002-07-31'},
+  {artist: 'Michelle Branch', title:  'Breathe', date :'2003-07-31'}
+
+]
+
+function sortTable(table,column) {
+  return table.sort((a,b) => { 
+    let colA = a[column].toUpperCase();
+    let colB = b[column].toUpperCase();
+    return colA < colB ? -1 : colA > colB ? 1 : 0
+  })
+}
