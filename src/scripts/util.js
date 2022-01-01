@@ -55,8 +55,26 @@ export class Util {
   }
 
   makeTable(values){
-    console.log('inside')
-    console.log(values)
+    this.clearTable()
+    const table = document.querySelector('#table-content')
+    for (let i = 0; i < values.length; i++) {
+      const tr = document.createElement('tr')
+      for (let j = 0; j < values[i].length; j++) {
+        const th = document.createElement('th')
+        th.classList.add('test')
+        th.append(values[i][j]) 
+        tr.append(th)
+      }
+      table.append(tr)
+    }
+    console.log(table)
+  }
+
+  clearTable() {
+    const deleteColumns = document.querySelectorAll('#table-content > tr')
+    deleteColumns.forEach((col) => {
+      col.remove()
+    })
   }
 
 

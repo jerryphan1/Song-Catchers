@@ -155,6 +155,10 @@ h2 {
   width: 80%;
 }
 
+#table-content {
+  width: 100%;
+}
+
 #table-content tr{
   display: flex;
   justify-content: center;
