@@ -232,6 +232,11 @@ h2 {
   font-size: 20px;
 }
 
+.artist-basics a{
+  color: black;
+  text-decoration: none;
+}
+
 #artist-info-bottom{
   display: flex;
   justify-content: space-evenly;

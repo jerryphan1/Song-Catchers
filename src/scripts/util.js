@@ -123,7 +123,11 @@ export class Util {
       const p = document.createElement('p')
       p.classList.add('artist-basics')
       if (i === 0) {
-        p.innerText = `Artist: ${information.name}`
+        let a = document.createElement('a')
+        a.href = information.uri
+        a.innerText = `${information.name}`
+        p.innerText ='Artist: '
+        p.append(a)
       } else {
         p.innerText = `Followers: ${information.followers.toLocaleString('en-US')}`
       }
