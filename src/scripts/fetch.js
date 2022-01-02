@@ -21,12 +21,7 @@ export class Fetch {
 
   async getTrack(input) {
     let token = await this.getToken();
-    let result = ""
-    let inputSplit = input.split(' ')
-    inputSplit.forEach((word,index) => {
-      result += word
-      if (index !== inputSplit.length - 1) result += '%20'
-    }) 
+    let result = encodeURIComponent(input) //special character parser thingy
     return fetch(`https://api.spotify.com/v1/search?q=${result}&type=track&market=ES&limit=10`, {
       headers: {
         'Authorization': token.token_type + ' ' + token.access_token,
@@ -38,8 +33,8 @@ export class Fetch {
       const outer = []
       for (let i = 0; i < data['tracks']['items'].length; i++) {
         const inner = {
+          title: data['tracks']['items'][i]['name'],                //title
           artist: data['tracks']['items'][i]['artists'][0]['name'], //artist
-          song: data['tracks']['items'][i]['name'],                //song
           releaseDate: data['tracks']['items'][i]['album']['release_date'], //release date
           artistId: data['tracks']['items'][i]['artists'][0]['id'] //artist id
         }

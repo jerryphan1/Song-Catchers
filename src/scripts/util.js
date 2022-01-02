@@ -55,7 +55,9 @@ export class Util {
   }
 
   makeTable(values){
-    this.clearTable()
+    this.clearTable();
+    this.clearToggle();
+    sessionStorage.setItem('tableData', JSON.stringify(values));
     const table = document.querySelector('#table-content')
     for (let i = 0; i < values.length; i++) {
       const tr = document.createElement('tr')
@@ -83,24 +85,42 @@ export class Util {
     })
   }
 
-
-  // let test = [
-  //   {artist: 'Michelle Branch', title:  'All You Wanted', date :'2001-07-31'},
-  //   {artist: 'Michelle Branch', title:  'Everywhere', date :'2002-07-31'},
-  //   {artist: 'Michelle Branch', title:  'Breathe', date :'2003-07-31'}
-  
-  // ]
-  
-  // sortTable(table,column,status) {
-  //   //status would be a toggled class saying if its sorted or
-  //   return table.sort((a,b) => { 
-  //     let colA = a[column].toUpperCase();
-  //     let colB = b[column].toUpperCase();
-  //     if (status) {
-  //       return colB < colA ? -1 : colB > colA ? 1 : 0
-  //     } else {
-  //       return colA < colB ? -1 : colA > colB ? 1 : 0
-  //     }
+  // clearToggle() {
+  //   const sorts = document.querySelectorAll('.middle-titles > i')
+  //   sorts.forEach((icon) => {
+  //     icon.classList.remove('active-sort')
   //   })
   // }
+
+  toggleSort() {
+    const sorts = document.querySelectorAll('.middle-titles > i')
+    sorts.forEach((icon) => {
+      icon.addEventListener('click', () => {
+        icon.classList.toggle('active-sort')
+        if (icon.classList.contains('active-sort')) {
+          this.sortTable(icon.dataset.value,true)
+        } else {
+          this.sortTable(icon.dataset.value,false)
+        }
+      })
+    })
+  }
+  
+  sortTable(column,status) {
+    //status would be a toggled class saying if its sorted or
+    let table = JSON.parse(sessionStorage.getItem('tableData'))
+    console.log(table)
+    let sorted = table.sort((a,b) => { 
+      let colA = a[column].toUpperCase();
+      let colB = b[column].toUpperCase();
+      if (!status) {
+        return colB < colA ? -1 : colB > colA ? 1 : 0
+      } else {
+        return colA < colB ? -1 : colA > colB ? 1 : 0
+      }
+    })
+    this.makeTable(sorted)
+  }
+
+
 }
