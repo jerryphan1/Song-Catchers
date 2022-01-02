@@ -56,7 +56,6 @@ export class Util {
 
   makeTable(values){
     this.clearTable();
-    this.clearToggle();
     sessionStorage.setItem('tableData', JSON.stringify(values));
     const table = document.querySelector('#table-content')
     for (let i = 0; i < values.length; i++) {
