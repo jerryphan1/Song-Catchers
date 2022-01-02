@@ -51,7 +51,7 @@ export class Util {
   getTableInfo(){
     let table = document.querySelector('#table-content');
     table.addEventListener('click', (e) => {
-      if (!e.target.classList.contains('middle-titles')) {
+      if (!e.target.classList.contains('middle-titles') && !e.target.classList.contains('fa-sort')) {
         console.log('right target')
       }
     })
