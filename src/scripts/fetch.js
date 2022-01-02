@@ -49,7 +49,6 @@ export class Fetch {
   // want to get artist image, total followers, name
   async getArtist(input) {
     let token = await this.getToken();
-    // let id = input.artistId
     return fetch(`https://api.spotify.com/v1/artists/${input}`, {
       headers: {
         'Authorization': token.token_type + ' ' + token.access_token,
@@ -58,7 +57,6 @@ export class Fetch {
     }).then(function(resp) {
       return resp.json();
     }).then(function(data) {
-      console.log(data)
       const artistInfo = {
         name: data['name'],
         followers: data['followers']['total'],
@@ -66,6 +64,56 @@ export class Fetch {
         uri: data['uri']
       }
       return artistInfo;
+    }).catch(function(err) {
+      console.log('something went wrong', err)
+    })
+  }
+
+  async getArtistTracks(){
+    let token = await this.getToken();
+    return fetch(`https://api.spotify.com/v1/artists/6maAVJxVTGW1xA3LokpQm8/top-tracks?market=ES`, {
+      headers: {
+        'Authorization': token.token_type + ' ' + token.access_token,
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    }).then(function(resp) {
+      return resp.json();
+    }).then(function(data) {
+      let songsArr = [];
+      for (let i = 0; i < data['tracks'].length; i++) {
+        const inner = {
+          name: data['tracks'][i]['name'],
+          preview: data['tracks'][i]['uri']
+        }
+        songsArr.push(inner)
+      }
+      console.log(songsArr)
+      return data;
+    }).catch(function(err) {
+      console.log('something went wrong', err)
+    })
+  }
+
+  async getRelatedArtists() {
+    let token = await this.getToken();
+    return fetch(`https://api.spotify.com/v1/artists/6maAVJxVTGW1xA3LokpQm8/related-artists`, {
+      headers: {
+        'Authorization': token.token_type + ' ' + token.access_token,
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    }).then(function(resp) {
+      return resp.json();
+    }).then(function(data) {
+      const artistsArr = [];
+      for (let i = 0; i < data['artists'].length / 2; i++) {
+        const inner = {
+          artist: data['artists'][i]['name'],
+          uri: data['artists'][i]['uri']
+        }
+        artistsArr.push(inner)
+      }
+      console.log(artistsArr)
+      return data;
     }).catch(function(err) {
       console.log('something went wrong', err)
     })

@@ -29,6 +29,7 @@ export class Util {
     const table = document.querySelector('#table-content')
     for (let i = 0; i < values.length; i++) {
       const tr = document.createElement('tr')
+      tr.classList.add('clickable-tr')
       Object.keys(values[i]).forEach((key) => {
         if (key !== 'artistId') {
           const th = document.createElement('th')
@@ -112,7 +113,7 @@ export class Util {
   }
 
   addArtistInfoTop(information){
-    console.log(information)
+    // console.log(information)
     this.clearArtistInfoTop()
     const outerDiv = document.querySelector('#artist-info-top');
     const img = document.createElement('img');

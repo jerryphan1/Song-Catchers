@@ -169,6 +169,14 @@ h2 {
   border-style: dashed;
 }
 
+.clickable-tr{
+  cursor: pointer;
+}
+
+/* .clickable-tr:hover{
+  background-color: blue;
+} */
+
 .middle-titles{
   margin: 5px 0px;
   width: 100%;
