@@ -6,4 +6,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
   util.collapseLeftBar()
   util.submitSong();
   util.toggleSort();
+  util.getTableInfo();
 });

@@ -210,6 +210,10 @@ h2 {
   width: 28%;
 }
 
+/* #artist-info-container:hover{
+  display: none;
+} */
+
 #artist-info-top{
   display: flex;
   justify-content: space-evenly;

@@ -48,6 +48,15 @@ export class Util {
     }
   }
 
+  getTableInfo(){
+    let table = document.querySelector('#table-content');
+    table.addEventListener('click', (e) => {
+      if (!e.target.classList.contains('middle-titles')) {
+        console.log('right target')
+      }
+    })
+  }
+
   clearTable() {
     const deleteColumns = document.querySelectorAll('#table-content > tr')
     deleteColumns.forEach((col) => {
