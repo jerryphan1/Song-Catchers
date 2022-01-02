@@ -9,5 +9,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
   util.getTableInfo();
   let fetch = new Fetch();
   // fetch.getArtistTracks();
-  fetch.getRelatedArtists();
+  // fetch.getRelatedArtists();
 });

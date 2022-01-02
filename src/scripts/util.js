@@ -55,8 +55,13 @@ export class Util {
       if (!e.target.classList.contains('middle-titles') && !e.target.classList.contains('fa-sort')) {
         const tr = e.target.parentElement;
         if (!tr.id) {
-          let artistInfo = await fetch.getArtist(tr.lastChild.innerText)
-          this.addArtistInfoTop(artistInfo)
+          let input = tr.lastChild.innerText
+          let artistInfo = await fetch.getArtist(input)
+          let artistTracks = await fetch.getArtistTracks(input)
+          let relatedArtists = await fetch.getRelatedArtists(input)
+          this.addArtistInfo(artistInfo);
+          this.addArtistTracks(artistTracks);
+          this.addRelatedArtists(relatedArtists)
         }
       }
     })
@@ -112,7 +117,7 @@ export class Util {
     }
   }
 
-  addArtistInfoTop(information){
+  addArtistInfo(information){
     // console.log(information)
     this.clearArtistInfoTop()
     const outerDiv = document.querySelector('#artist-info-top');
@@ -135,5 +140,13 @@ export class Util {
       div.append(p)
     }
     outerDiv.append(img,div)
+  }
+
+  addArtistTracks(information) {
+    console.log(information);
+  }
+
+  addRelatedArtists(information) {
+    console.log(information)
   }
 }

@@ -69,9 +69,9 @@ export class Fetch {
     })
   }
 
-  async getArtistTracks(){
+  async getArtistTracks(input){
     let token = await this.getToken();
-    return fetch(`https://api.spotify.com/v1/artists/6maAVJxVTGW1xA3LokpQm8/top-tracks?market=ES`, {
+    return fetch(`https://api.spotify.com/v1/artists/${input}/top-tracks?market=ES`, {
       headers: {
         'Authorization': token.token_type + ' ' + token.access_token,
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -87,16 +87,15 @@ export class Fetch {
         }
         songsArr.push(inner)
       }
-      console.log(songsArr)
-      return data;
+      return songsArr;
     }).catch(function(err) {
       console.log('something went wrong', err)
     })
   }
 
-  async getRelatedArtists() {
+  async getRelatedArtists(input) {
     let token = await this.getToken();
-    return fetch(`https://api.spotify.com/v1/artists/6maAVJxVTGW1xA3LokpQm8/related-artists`, {
+    return fetch(`https://api.spotify.com/v1/artists/${input}/related-artists`, {
       headers: {
         'Authorization': token.token_type + ' ' + token.access_token,
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -112,8 +111,7 @@ export class Fetch {
         }
         artistsArr.push(inner)
       }
-      console.log(artistsArr)
-      return data;
+      return artistsArr;
     }).catch(function(err) {
       console.log('something went wrong', err)
     })
