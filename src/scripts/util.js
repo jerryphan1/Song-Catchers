@@ -48,11 +48,18 @@ export class Util {
     }
   }
 
+  //event listener that takes advantage of bubbling property to add one event listner to every row
   getTableInfo(){
     let table = document.querySelector('#table-content');
     table.addEventListener('click', (e) => {
       if (!e.target.classList.contains('middle-titles') && !e.target.classList.contains('fa-sort')) {
-        console.log('right target')
+        const tr = e.target.parentElement;
+        if (!tr.id) {
+          console.log(tr)
+          console.log(tr.lastChild.innerText)
+          console.log(typeof tr.lastChild.innerText)
+
+        }
       }
     })
   }
