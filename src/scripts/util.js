@@ -1,37 +1,8 @@
 import {Fetch} from './fetch.js';
 let fetch = new Fetch();
 export class Util {
-  makeGraph() {
-    const ctx = document.getElementById('myChart').getContext('2d')
-    const labels = [
-      '2012',
-      '2013',
-      '2014',
-      '2015',
-      '2016',
-    ];
-  
-    const testData = {
-      labels,
-      datasets: [
-        {
-          data: [200,211,212,213,214,215],
-          backgroundColor: 'rgb(255, 10, 11)',
-          label: 'Test Graph'
-        }
-      ]
-    }
-  
-    const config = {
-      type: 'line',
-      data: testData,
-      options: {
-        responsive: true,
-      },
-    }
-  
-    const myChart = new Chart(ctx,config)
-  }
+
+
 
   collapseLeftBar() {
     document.querySelectorAll('.collapsible').forEach((button) => {
@@ -63,7 +34,7 @@ export class Util {
       Object.keys(values[i]).forEach((key) => {
         if (key !== 'artistId') {
           const th = document.createElement('th')
-          th.classList.add('test')
+          th.classList.add('artist-table-info')
           th.append(values[i][key]) 
           tr.append(th)
         } else {

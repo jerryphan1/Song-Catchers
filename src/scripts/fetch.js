@@ -49,7 +49,7 @@ export class Fetch {
   async getArtist() {
     let token = await this.getToken();
     // let id = input.artistId
-    fetch(`https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg`, {
+    fetch(`https://api.spotify.com/v1/artists/6maAVJxVTGW1xA3LokpQm8`, {
       headers: {
         'Authorization': token.token_type + ' ' + token.access_token,
         'Content-Type': 'application/x-www-form-urlencoded'

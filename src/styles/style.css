@@ -180,7 +180,7 @@ h2 {
   cursor: pointer;
 }
 
-.test {
+.artist-table-info {
   width: 100%;
   margin: 5px 0px;
   padding: 0 5px;
@@ -192,23 +192,52 @@ h2 {
   display: none
 }
 
-#right-container{
+/* #right-container{
   display: flex;
-  text-align: center;
-  justify-content: center;
   border: 1px solid black;
   border-style: dashed;
   padding: 10px;
   margin: 5px auto;
   width: 25%;
-}
+} */
 
-.chart {
-  width: 95%;
-  height: 40%;
+#artist-info-container {
+  display: flex;
   border: 1px solid black;
+  border-style: dashed;
+  flex-direction: column;
+  margin: 5px auto;
+  width: 28%;
 }
 
-.chart:hover {
-  background-color: pink;
+#artist-info-top{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.artist-pic {
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.artist-basics {
+  margin: 10px;
+  font-size: 20px;
+}
+
+#artist-info-bottom{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#artist-info-bottom > div{
+  text-align: center;
+}
+
+#song-lyrics{
+  text-align: center;
+
 }
