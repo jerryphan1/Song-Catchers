@@ -2,8 +2,6 @@ import {Fetch} from './fetch.js';
 let fetch = new Fetch();
 export class Util {
 
-
-
   collapseLeftBar() {
     document.querySelectorAll('.collapsible').forEach((button) => {
       button.addEventListener('click', () => {
@@ -34,6 +32,7 @@ export class Util {
       Object.keys(values[i]).forEach((key) => {
         if (key !== 'artistId') {
           const th = document.createElement('th')
+          key === 'title' ? th.classList.add('title') : key === 'artist' ? th.classList.add('artist') : th.classList.add('date')
           th.classList.add('artist-table-info')
           th.append(values[i][key]) 
           tr.append(th)
@@ -51,14 +50,12 @@ export class Util {
   //event listener that takes advantage of bubbling property to add one event listner to every row
   getTableInfo(){
     let table = document.querySelector('#table-content');
-    table.addEventListener('click', (e) => {
+    table.addEventListener('click', async (e) => {
       if (!e.target.classList.contains('middle-titles') && !e.target.classList.contains('fa-sort')) {
         const tr = e.target.parentElement;
         if (!tr.id) {
-          console.log(tr)
-          console.log(tr.lastChild.innerText)
-          console.log(typeof tr.lastChild.innerText)
-          fetch.getArtist(tr.lastChild.innerText)
+          let artistInfo = await fetch.getArtist(tr.lastChild.innerText)
+          this.addArtistInfoTop(artistInfo)
         }
       }
     })
@@ -95,7 +92,6 @@ export class Util {
   sortTable(column,status) {
     //status would be a toggled class saying if its sorted or
     let table = JSON.parse(sessionStorage.getItem('tableData'))
-    console.log(table)
     let sorted = table.sort((a,b) => { 
       let colA = a[column].toUpperCase();
       let colB = b[column].toUpperCase();
@@ -108,5 +104,31 @@ export class Util {
     this.makeTable(sorted)
   }
 
+  clearArtistInfoTop(){
+    const outerDiv = document.querySelector('#artist-info-top');
+    while (outerDiv.firstChild) {
+      outerDiv.removeChild(outerDiv.lastChild);
+    }
+  }
 
+  addArtistInfoTop(information){
+    console.log(information)
+    this.clearArtistInfoTop()
+    const outerDiv = document.querySelector('#artist-info-top');
+    const img = document.createElement('img');
+    img.classList.add('artist-pic');
+    img.src = information.image; 
+    const div = document.createElement('div')
+    for (let i = 0; i < 2; i++) {
+      const p = document.createElement('p')
+      p.classList.add('artist-basics')
+      if (i === 0) {
+        p.innerText = `Artist: ${information.name}`
+      } else {
+        p.innerText = `Followers: ${information.followers.toLocaleString('en-US')}`
+      }
+      div.append(p)
+    }
+    outerDiv.append(img,div)
+  }
 }

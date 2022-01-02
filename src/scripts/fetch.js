@@ -46,10 +46,11 @@ export class Fetch {
     })
   }
 
+  // want to get artist image, total followers, name
   async getArtist(input) {
     let token = await this.getToken();
     // let id = input.artistId
-    fetch(`https://api.spotify.com/v1/artists/${input}`, {
+    return fetch(`https://api.spotify.com/v1/artists/${input}`, {
       headers: {
         'Authorization': token.token_type + ' ' + token.access_token,
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -57,8 +58,12 @@ export class Fetch {
     }).then(function(resp) {
       return resp.json();
     }).then(function(data) {
-      console.log(data)
-      return data;
+      const artistInfo = {
+        name: data['name'],
+        followers: data['followers']['total'],
+        image: data['images'][data.images.length -1]['url']
+      }
+      return artistInfo;
     }).catch(function(err) {
       console.log('something went wrong', err)
     })
