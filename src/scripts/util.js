@@ -58,7 +58,7 @@ export class Util {
           console.log(tr)
           console.log(tr.lastChild.innerText)
           console.log(typeof tr.lastChild.innerText)
-
+          fetch.getArtist(tr.lastChild.innerText)
         }
       }
     })
