@@ -10,6 +10,24 @@ export class Util {
     })
   };
 
+  collapseLeftSide(){
+    let collapse = document.querySelector('.collapse-left')
+    collapse.addEventListener('click', () => {
+      let collapseContainer = document.querySelector('.left-container')
+      collapseContainer.classList.toggle('left-container-collapse')
+
+      if (collapseContainer.classList.contains('left-container-collapse')) {
+        this.resetActiveState();
+      }
+    })
+  }
+
+  resetActiveState(){
+    document.querySelectorAll('.collapsible').forEach((button) => {
+      button.classList.remove('active')
+    })
+  }
+
   submitSong() {
     let input = document.querySelector('.search-bar-input')
     let searchBar = document.querySelector('.search-bar')
