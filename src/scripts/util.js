@@ -64,21 +64,35 @@ export class Util {
           th.append(values[i][key]) 
           tr.append(th)
         } else {
-          const th = document.createElement('th')
-          th.classList.add('hide-artist-id')
-          th.append(values[i][key]) 
-          tr.append(th)
+          let thDel = this.createDelete()
+          const thID = document.createElement('th')
+          thID.classList.add('hide-artist-id')
+          thID.append(values[i][key]) 
+          tr.append(thDel,thID)
         }
       })
       table.append(tr)
     }
   }
 
+  createDelete(){
+    const icon = document.createElement("i");
+    icon.classList.add('fas','fa-trash','remove');
+    const thDel = document.createElement('th')
+    thDel.classList.add('delete', 'artist-table-info');
+    thDel.append(icon)
+    return thDel;
+  }
+
+
   //event listener that takes advantage of bubbling property to add one event listner to every row
   getTableInfo(){
     let table = document.querySelector('#table-content');
     table.addEventListener('click', (e) => {
-      if (!e.target.classList.contains('middle-titles') && !e.target.classList.contains('fa-sort')) {
+      if (e.target.classList.contains('fa-trash') && e.target.classList.contains('remove')) {
+        e.target.parentElement.parentElement.remove()
+        console.log(sessionStorage.getItem('tableData'))
+      } else if (!e.target.classList.contains('middle-titles') && !e.target.classList.contains('fa-sort')) {
         const tr = e.target.parentElement;
         // id is the table id
         if (!tr.id) {
@@ -233,10 +247,14 @@ export class Util {
       let titleP = document.createElement('p')
       let lyricsP = document.createElement('p')
       titleP.innerText = lyrics[0].title;
+      console.log(lyrics[0].lyrics.lyrics)
       if (!lyrics[0].lyrics.lyrics) {
         lyricsP.innerText = `lyrics for ${title} not available...`;
       } else {
-        lyricsP.innerText = lyrics[0].lyrics.lyrics;
+        //Paroles de la chanson Nightlight par Illenium
+        let startSlice = lyrics[0].lyrics.lyrics.indexOf(`\n`) 
+        let sliceLyrics = lyrics[0].lyrics.lyrics.slice(startSlice);
+        lyricsP.innerText = sliceLyrics;
       }
       lyricContainer.append(titleP,lyricsP)
     }
@@ -248,4 +266,6 @@ export class Util {
       lyricContainer.removeChild(lyricContainer.lastChild)
     }
   }
+
 }
+

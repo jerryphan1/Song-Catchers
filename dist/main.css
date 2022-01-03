@@ -273,6 +273,10 @@ h2 {
   font-weight: 550;
 }
 
+.delete:hover {
+  color:white;
+}
+
 .fa-sort:hover {
   color: white;
   cursor: pointer;
