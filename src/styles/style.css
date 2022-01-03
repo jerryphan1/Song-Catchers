@@ -248,12 +248,22 @@ h2 {
 #artist-info-bottom{
   display: flex;
   justify-content: space-evenly;
+  width: 100%;
 }
 
 #artist-info-bottom > div{
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  width: 100%;
 }
 
 #song-lyrics{
   text-align: center;
+}
+
+.top-songs, .common-artists  {
+  /* white-space: nowrap; */
+  overflow: hidden;
+  text-overflow: clip;
 }
