@@ -117,5 +117,28 @@ export class Fetch {
     })
   }
 
+  getSongLyrics(artist,title){
+    let artistInput = encodeURIComponent(artist)
+    let titleInput = encodeURIComponent(title)
+    return fetch(`https://api.lyrics.ovh/v1/${artistInput}/${titleInput}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    }).then( (resp) => resp.json()) 
+      .then( (data) =>  {
+        const lyricsArr = []
+        const inner = {
+          title: title,
+          lyrics: data
+        }
+        lyricsArr.push(inner);
+        return lyricsArr;
+      })
+      .catch(function(err) {
+        console.log('bad',err)
+    })
+  }
+
 }
 

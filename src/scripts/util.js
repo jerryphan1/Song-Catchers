@@ -80,9 +80,13 @@ export class Util {
     table.addEventListener('click', (e) => {
       if (!e.target.classList.contains('middle-titles') && !e.target.classList.contains('fa-sort')) {
         const tr = e.target.parentElement;
+        // id is the table id
         if (!tr.id) {
-          let input = tr.lastChild.innerText
-          this.fillArtistInfo(input)
+          const artist = tr.querySelector('.artist').innerText;
+          const title = tr.querySelector('.title').innerText;
+          const artistId = tr.querySelector('.hide-artist-id').innerText;
+          this.fillArtistInfo(artistId)
+          this.addLyrics(artist,title)
         }
       }
     })
@@ -214,6 +218,34 @@ export class Util {
     const outerDiv = document.querySelector('#artist-info-bottom');
     while (outerDiv.firstChild) {
       outerDiv.removeChild(outerDiv.lastChild);
+    }
+  }
+
+  async addLyrics(artist,title){
+    this.clearLyrics()
+    let lyrics = await fetch.getSongLyrics(artist,title)
+    let lyricContainer = document.querySelector('#song-lyrics')
+    if (typeof lyrics === 'undefined') {
+      console.log('failed')
+      console.log(lyrics)
+    } else {
+      console.log(lyrics)
+      let titleP = document.createElement('p')
+      let lyricsP = document.createElement('p')
+      titleP.innerText = lyrics[0].title;
+      if (!lyrics[0].lyrics.lyrics) {
+        lyricsP.innerText = `lyrics for ${title} not available...`;
+      } else {
+        lyricsP.innerText = lyrics[0].lyrics.lyrics;
+      }
+      lyricContainer.append(titleP,lyricsP)
+    }
+  }
+
+  clearLyrics(){
+    let lyricContainer = document.querySelector('#song-lyrics')
+    while (lyricContainer.firstChild) {
+      lyricContainer.removeChild(lyricContainer.lastChild)
     }
   }
 }
