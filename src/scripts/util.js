@@ -51,20 +51,26 @@ export class Util {
   //event listener that takes advantage of bubbling property to add one event listner to every row
   getTableInfo(){
     let table = document.querySelector('#table-content');
-    table.addEventListener('click', async (e) => {
+    table.addEventListener('click', (e) => {
       if (!e.target.classList.contains('middle-titles') && !e.target.classList.contains('fa-sort')) {
         const tr = e.target.parentElement;
         if (!tr.id) {
           let input = tr.lastChild.innerText
-          let artistInfo = await fetch.getArtist(input)
-          let artistTracks = await fetch.getArtistTracks(input)
-          let relatedArtists = await fetch.getRelatedArtists(input)
-          this.addArtistInfo(artistInfo);
-          this.addArtistTracks(artistTracks);
-          this.addRelatedArtists(relatedArtists)
+          this.fillArtistInfo(input)
         }
       }
     })
+  }
+
+  async fillArtistInfo(input){
+    let artistInfo = await fetch.getArtist(input)
+    let artistTracks = await fetch.getArtistTracks(input)
+    let relatedArtists = await fetch.getRelatedArtists(input)
+    this.clearArtistInfoTop();
+    this.clearArtistInfoBottom();
+    this.addArtistInfo(artistInfo);
+    this.addArtistTracks(artistTracks);
+    this.addRelatedArtists(relatedArtists)
   }
 
   clearTable() {
@@ -118,8 +124,6 @@ export class Util {
   }
 
   addArtistInfo(information){
-    // console.log(information)
-    this.clearArtistInfoTop()
     const outerDiv = document.querySelector('#artist-info-top');
     const img = document.createElement('img');
     img.classList.add('artist-pic');
@@ -143,10 +147,47 @@ export class Util {
   }
 
   addArtistTracks(information) {
-    console.log(information);
+    const artistInfo = document.querySelector('#artist-info-bottom');
+    const div = document.createElement('div');
+    const h2 = document.createElement('h2');
+    h2.innerText = 'Popular Songs';
+    const ul = document.createElement('ul')
+    ul.classList.add('top-songs')
+    for (let i = 0; i < information.length; i++){
+      const li = document.createElement('li')
+      const a = document.createElement('a')
+      a.href = information[i].preview;
+      a.innerText = `${information[i].name}`;
+      li.append(a)
+      ul.append(li)
+    }
+    div.append(h2,ul)
+    artistInfo.append(div)
   }
 
   addRelatedArtists(information) {
-    console.log(information)
+    const artistInfo = document.querySelector('#artist-info-bottom');
+    const div = document.createElement('div');
+    const h2 = document.createElement('h2');
+    h2.innerText = 'Similar Artists';
+    const ul = document.createElement('ul')
+    ul.classList.add('common-artists')
+    for (let i = 0; i < information.length; i++){
+      const li = document.createElement('li')
+      const a = document.createElement('a')
+      a.href = information[i].uri;
+      a.innerText = `${information[i].artist}`;
+      li.append(a)
+      ul.append(li)
+    }
+    div.append(h2,ul)
+    artistInfo.append(div)
+  }
+
+  clearArtistInfoBottom(){
+    const outerDiv = document.querySelector('#artist-info-bottom');
+    while (outerDiv.firstChild) {
+      outerDiv.removeChild(outerDiv.lastChild);
+    }
   }
 }

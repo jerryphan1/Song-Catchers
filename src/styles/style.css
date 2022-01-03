@@ -240,7 +240,7 @@ h2 {
   font-size: 20px;
 }
 
-.artist-basics a{
+.artist-basics a, .top-songs a, .common-artists a{
   color: black;
   text-decoration: none;
 }
@@ -256,5 +256,4 @@ h2 {
 
 #song-lyrics{
   text-align: center;
-
 }

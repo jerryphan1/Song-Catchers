@@ -7,7 +7,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
   util.submitSong();
   util.toggleSort();
   util.getTableInfo();
-  let fetch = new Fetch();
-  // fetch.getArtistTracks();
-  // fetch.getRelatedArtists();
 });
