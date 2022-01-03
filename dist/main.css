@@ -1,3 +1,375 @@
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/reset.css ***!
+  \****************************************************************************************************/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/style.css ***!
+  \****************************************************************************************************/
+h2 {
+  font-size: 24px;
+}
+
+#main-container{
+  display: flex;
+  border: 1px;
+  border-style: dashed;
+  background-color: lightgray;
+  font-family: sans-serif;
+  height: 100%;
+}
+
+#top-middle {
+  text-align: center;
+}
+
+.left-container{
+  display: flex;
+  flex-direction: column;
+  border: 0;
+  padding: 5px 0px;
+  border-style: dashed;
+  width: 18%;
+  height: 100%;
+  transition: width 0.3s;
+  align-items: center;
+  /* flex-shrink: 0; */
+}
+
+.left-container-collapse{
+  width: 45px;
+}
+
+.left-container-collapse .nav-label{
+  display: none;
+}
+
+.collapsible, .collapse-left{
+  background-color: rgb(134, 118, 118);
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: rgb(94, 87, 100);
+}
+
+.active + div {
+  display: block;
+}
+
+.nav-link{
+  display: flex;
+  align-items: center;
+  color: rgba(0,0,0,0.75);
+}
+
+.icon-container{
+  font-size: 25px;
+  width: 15%;
+  height: 15%;
+  padding: 10px;
+  /* padding-top: 5px; */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* .icon-container > i {
+  text-align: center;
+} */
+
+.left-content{
+  width: 100%;
+  /* padding: 0 6px; */
+  /* max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out; */
+  background-color: #f1f1f1;
+  font-size: 14px;
+  display: none;
+  text-align: center;
+  /* overflow: auto; */
+}
+
+
+.fa-sliders-h {
+  /* font-size: 34px; */
+  cursor: pointer;
+}
+
+
+.fab {
+  color: black;
+  font-size: 28px;
+  padding: 10px;
+}
+
+#middle-container{
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  font-size: 18px;
+  line-height: 1.6;
+  /* position: relative; */
+  border: 1px solid black;
+  border-style: dashed;
+  margin: 5px auto;
+  width: 55%;
+}
+
+.content {
+  /* width: 40vw; */
+  width: 40vw;
+  padding: 15px;
+  position: relative;
+}
+
+.search-bar {
+  border: 2px solid ;
+  display: flex;
+  border-radius: 9000px;
+  height: 40px; 
+  width: 40px; 
+  padding: 2px;
+  position: relative;
+  transition: width 500ms ease-in-out;
+}
+
+.search-bar-input {
+  flex-grow: 1;
+  font-size: 20px;
+  padding: 0 20px;
+  border: 0;
+  background: none;
+  outline: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  line-height: 38px;
+  opacity: 0;
+  cursor: pointer;
+  color: rgba(32, 30, 30, 0.959);
+}
+
+.search-bar-submit {
+  font-size: 20px;
+  cursor: pointer;
+  border: 0px;
+  border-radius: 100vh;
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+  background: transparent;
+  transition: background-color 250ms ease-in-out;
+
+}
+
+.search-bar:hover .search-bar-submit {
+  color: white;
+  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+.search-bar:focus {
+  outline: 0;
+}
+
+.search-bar:focus-within {
+  width: 100%;
+}
+
+.search-bar:focus-within .search-bar-submit{
+  background-color: rgb(43, 161, 136);
+  color: white;
+  box-shadow: 0 0 20px rgba(0,0,0,0.25);
+}
+
+.search-bar:focus-within .search-bar-input{
+  transition: opacity 500ms ease-in-out;
+  opacity: 1;
+  cursor: initial;
+  width: 80%;
+}
+
+#table-content {
+  width: 100%;
+}
+
+#table-content tr{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin: 0px;
+  border: 1px solid black;
+  border-style: dashed;
+}
+
+.clickable-tr{
+  cursor: pointer;
+}
+
+/* .clickable-tr:hover{
+  background-color: blue;
+} */
+
+.middle-titles{
+  margin: 5px 0px;
+  width: 100%;
+  font-weight: 550;
+}
+
+.fa-sort:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.artist-table-info {
+  width: 100%;
+  margin: 5px 0px;
+  padding: 0 5px;
+  font-size: 14px;
+  text-overflow: wrap;
+}
+
+.hide-artist-id {
+  display: none
+}
+
+/* #right-container{
+  display: flex;
+  border: 1px solid black;
+  border-style: dashed;
+  padding: 10px;
+  margin: 5px auto;
+  width: 25%;
+} */
+
+#artist-info-container {
+  display: flex;
+  border: 1px solid black;
+  border-style: dashed;
+  flex-direction: column;
+  margin: 5px auto;
+  width: 28%;
+}
+
+/* #artist-info-container:hover{
+  display: none;
+} */
+
+#artist-info-top{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.artist-pic {
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.artist-basics {
+  margin: 10px;
+  font-size: 20px;
+}
+
+.artist-basics a, .top-songs a, .common-artists a{
+  color: black;
+  text-decoration: none;
+}
+
+#artist-info-bottom{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+#artist-info-bottom > div{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+}
+
+#song-lyrics{
+  text-align: center;
+}
+
+.top-songs, .common-artists  {
+  /* white-space: nowrap; */
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+footer{
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.fa-adjust{
+  color: black;
+}
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
