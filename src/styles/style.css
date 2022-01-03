@@ -23,7 +23,7 @@ h2 {
   border-style: dashed;
   width: 18%;
   height: 100%;
-  transition: width 0.5s;
+  transition: width 0.3s;
   align-items: center;
   /* flex-shrink: 0; */
 }

@@ -5,7 +5,8 @@ export class Util {
   collapseLeftBar() {
     document.querySelectorAll('.collapsible').forEach((button) => {
       button.addEventListener('click', () => {
-        button.classList.toggle('active')
+        button.classList.toggle('active');
+        this.resetCollapseLeftSide();
       })
     })
   };
@@ -20,6 +21,13 @@ export class Util {
         this.resetActiveState();
       }
     })
+  }
+
+  resetCollapseLeftSide(){
+    let collapseContainer = document.querySelector('.left-container')
+    if (collapseContainer.classList.contains('left-container-collapse')) {
+      collapseContainer.classList.remove('left-container-collapse')
+    }
   }
 
   resetActiveState(){
