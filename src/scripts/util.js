@@ -90,8 +90,10 @@ export class Util {
     let table = document.querySelector('#table-content');
     table.addEventListener('click', (e) => {
       if (e.target.classList.contains('fa-trash') && e.target.classList.contains('remove')) {
-        e.target.parentElement.parentElement.remove()
-        console.log(sessionStorage.getItem('tableData'))
+        let deleted = e.target.parentElement.parentElement
+        console.log(deleted)
+        this.sessionStorageTest(deleted);
+        deleted.remove()
       } else if (!e.target.classList.contains('middle-titles') && !e.target.classList.contains('fa-sort')) {
         const tr = e.target.parentElement;
         // id is the table id
@@ -104,6 +106,20 @@ export class Util {
         }
       }
     })
+  }
+
+  sessionStorageTest(data){
+    const artist = data.querySelector('.artist').innerText;
+    const title = data.querySelector('.title').innerText;
+    const artistId = data.querySelector('.hide-artist-id').innerText;
+    // console.log(JSON.parse(sessionStorage.getItem('tableData')))
+    let keys = JSON.parse(sessionStorage.getItem('tableData'))
+    for (let i = 0; i < keys.length; i++) {
+      if (keys[i].title === title && keys[i].artist == artist && keys[i].artistId == artistId) {
+        keys.splice(i,1)
+        return sessionStorage.setItem('tableData', JSON.stringify(keys));
+      }
+    }
   }
 
   async fillArtistInfo(input){
@@ -239,25 +255,19 @@ export class Util {
     this.clearLyrics()
     let lyrics = await fetch.getSongLyrics(artist,title)
     let lyricContainer = document.querySelector('#song-lyrics')
-    if (typeof lyrics === 'undefined') {
-      console.log('failed')
-      console.log(lyrics)
+    let titleP = document.createElement('p')
+    let lyricsP = document.createElement('p')
+    titleP.innerText = lyrics[0].title;
+    if (!lyrics[0].lyrics.lyrics) {
+      lyricsP.innerText = `lyrics for ${title} not available...`;
     } else {
-      console.log(lyrics)
-      let titleP = document.createElement('p')
-      let lyricsP = document.createElement('p')
-      titleP.innerText = lyrics[0].title;
-      console.log(lyrics[0].lyrics.lyrics)
-      if (!lyrics[0].lyrics.lyrics) {
-        lyricsP.innerText = `lyrics for ${title} not available...`;
-      } else {
-        //Paroles de la chanson Nightlight par Illenium
-        let startSlice = lyrics[0].lyrics.lyrics.indexOf(`\n`) 
-        let sliceLyrics = lyrics[0].lyrics.lyrics.slice(startSlice);
-        lyricsP.innerText = sliceLyrics;
-      }
-      lyricContainer.append(titleP,lyricsP)
+      //Paroles de la chanson Nightlight par Illenium
+      let startSlice = lyrics[0].lyrics.lyrics.indexOf(`\n`) 
+      let sliceLyrics = lyrics[0].lyrics.lyrics.slice(startSlice);
+      lyricsP.innerText = sliceLyrics;
     }
+    lyricContainer.append(titleP,lyricsP)
+    
   }
 
   clearLyrics(){
