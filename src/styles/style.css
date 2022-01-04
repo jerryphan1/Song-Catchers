@@ -23,7 +23,7 @@ h2:hover{
   border: 1px;
   border-style: dashed;
   background-color: lightgray;
-  font-family: sans-serif;
+  font-family: Helvetica;
   height: 100%;
 }
 
@@ -86,6 +86,7 @@ h2:hover{
   align-items: center;
   text-align: center;
   justify-content: center;
+  font-family: sans-serif;
   flex-shrink: 0;
 }
 
@@ -106,6 +107,9 @@ h2:hover{
   /* overflow: auto; */
 }
 
+.left-content a i {
+
+}
 
 .fa-sliders-h {
   /* font-size: 34px; */
@@ -115,8 +119,31 @@ h2:hover{
 
 .fab {
   color: black;
-  font-size: 28px;
-  padding: 10px;
+  font-size: 34px;
+  padding: 10px 20px;
+  transition: all 1s;
+}
+
+.fa-linkedin{
+  color: #2867B2;
+}
+
+.fab:hover {
+  animation: icon-flip 2s ease-in-out infinite; 
+}
+
+@keyframes icon-flip {
+  0% {
+    transform: rotateY(0deg); 
+  }
+  50% {
+    transform: rotateY(180deg); 
+    color: rgb(120, 221, 221);
+  }
+  100% {
+    transform: rotateY(360deg); 
+    color: rgb(20, 39, 37);
+  } 
 }
 
 .remove:hover{
@@ -231,9 +258,10 @@ h2:hover{
 }
 
 
-/* .clickable-tr:hover{
-  background-color: blue;
-} */
+.clickable-tr:hover{
+  /* background-color: blue; */
+  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
 
 .middle-titles{
   margin: 5px 0px;
