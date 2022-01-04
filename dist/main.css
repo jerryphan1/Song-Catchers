@@ -309,6 +309,7 @@ footer{
   transition: background-color 250ms ease-in-out;
 }
 
+/* DONT TRY TO ADD A SCALE */
 .search-bar:hover .search-bar-submit {
   color: #664f4f;
   box-shadow: 0 0 20px rgba(0,0,0,0.15);

@@ -57,11 +57,16 @@ export class Fetch {
     }).then(function(resp) {
       return resp.json();
     }).then(function(data) {
+      console.log(data)
       const artistInfo = {
         name: data['name'],
         followers: data['followers']['total'],
-        image: data['images'][data.images.length -1]['url'],
         uri: data['uri']
+      }
+      if (data['images'].length === 0) {
+        artistInfo.image = '/missing-profile.png'
+      } else {
+        artistInfo.image = data['images'][data.images.length -1]['url']
       }
       return artistInfo;
     }).catch(function(err) {
