@@ -1,6 +1,7 @@
 h2 {
   font-size: 18px;
   font-weight: 700;
+  margin-top: 10px;
 }
 
 #name{
@@ -290,8 +291,8 @@ h2:hover{
 }
 
 .artist-pic {
-  height: auto;
-  width: auto;
+  height: 160px;
+  width: 160px;
   object-fit: contain;
   border-radius: 50%;
 }
@@ -345,6 +346,7 @@ h2:hover{
   font-size: 14px;
   opacity: 0.75;
   margin: 20px;
+  padding-top: 0px;
 }
 
 .top-songs{

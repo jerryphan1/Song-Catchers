@@ -262,7 +262,9 @@ export class Util {
     let titleP = document.createElement('p')
     let lyricsP = document.createElement('p')
     titleP.innerText = lyrics[0].title;
-    if (!lyrics[0].lyrics.lyrics) {
+    if (typeof lyrics[0].lyrics === 'undefined'){
+      lyricsP.innerText = `lyrics for ${title} not available...`;
+    }else if (!lyrics[0].lyrics.lyrics) {
       lyricsP.innerText = `lyrics for ${title} not available...`;
     } else {
       //Paroles de la chanson Nightlight par Illenium

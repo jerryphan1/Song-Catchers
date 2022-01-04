@@ -137,6 +137,7 @@ export class Fetch {
       })
       .catch(function(err) {
         console.log('bad',err)
+        return [{title: title}]
     })
   }
 
