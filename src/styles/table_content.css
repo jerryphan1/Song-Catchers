@@ -3,24 +3,20 @@
 }
 
 .remove:hover{
-  color: white;
+  color: #eceaea;
 }
 
 .fa-sort:hover {
-  color: white;
+  color: #eceaea;
   cursor: pointer;
 }
 
 #middle-container{
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   flex-direction: column;
   font-size: 18px;
   line-height: 1.6;
-  /* position: relative; */
-  border: 1px solid black;
-  border-style: dashed;
   margin: 5px auto;
   width: 55%;
 }
@@ -28,7 +24,7 @@
 .content {
   /* width: 40vw; */
   width: 40vw;
-  padding: 15px;
+  padding: 35px;
   position: relative;
 }
 
@@ -70,11 +66,10 @@
   margin-left: auto;
   background: transparent;
   transition: background-color 250ms ease-in-out;
-
 }
 
 .search-bar:hover .search-bar-submit {
-  color: white;
+  color: #eceaea;
   box-shadow: 0 0 20px rgba(0,0,0,0.15);
 }
 
@@ -110,9 +105,12 @@
   text-align: center;
   width: 100%;
   margin: 0px;
-  border: 1px solid black;
-  border-style: dashed;
 }
+
+#table-content tr:nth-child(n+2){
+  border: 1px solid black;
+}
+
 
 .clickable-tr{
   cursor: pointer;
@@ -128,6 +126,7 @@
   margin: 5px 0px;
   width: 100%;
   font-weight: 550;
+  border: none;
 }
 
 .artist-table-info {
@@ -140,6 +139,10 @@
 
 .title{
   font-weight: 550;
+}
+
+.artist, .date{
+  color: #574949;
 }
 
 .hide-artist-id {

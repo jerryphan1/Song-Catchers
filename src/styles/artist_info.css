@@ -15,8 +15,8 @@
 }
 
 .artist-pic {
-  height: 160px;
-  width: 160px;
+  height: 140px;
+  width: 140px;
   object-fit: contain;
   border-radius: 50%;
 }
@@ -32,6 +32,10 @@
   text-decoration: none;
 }
 
+.artist-basics a:hover{
+  color: white;
+}
+
 
 .artist-basic-followers{
   font-size: 16px;
@@ -40,8 +44,10 @@
 }
 
 .artist-basic-followers > span{
-  opacity: 0.70;
+  opacity: 0.80;
   font-size: 14px;
+  color: #574949;
+
 }
 
 #artist-info-bottom{
@@ -69,9 +75,15 @@
 
 #song-lyrics  p:nth-child(2){
   font-size: 14px;
+  color: #574949;
   opacity: 0.75;
   margin: 20px;
   padding-top: 0px;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  height: 30%;
+  width: 93%;
+  overflow: scroll;
 }
 
 .top-songs{
@@ -91,6 +103,7 @@
   opacity: 0.75;
   margin: 5px 3px;
   text-align: left;
+  color: #574949;
 }
 
 .top-songs li a:hover, .common-artists li a:hover{
