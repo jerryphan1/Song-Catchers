@@ -3,11 +3,11 @@
 }
 
 .remove:hover{
-  color: #eceaea;
+  transform: scale(1.2);
 }
 
 .fa-sort:hover {
-  color: #eceaea;
+  transform: scale(1.2);
   cursor: pointer;
 }
 

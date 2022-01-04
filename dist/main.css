@@ -69,8 +69,7 @@ h1 {
 }
 
 h2:hover{
-  cursor: pointer;
-  color: white;
+  font-size: 115%;
 }
 
 #main-container{
@@ -242,11 +241,11 @@ footer{
 }
 
 .remove:hover{
-  color: #eceaea;
+  transform: scale(1.2);
 }
 
 .fa-sort:hover {
-  color: #eceaea;
+  transform: scale(1.2);
   cursor: pointer;
 }
 
@@ -431,7 +430,7 @@ footer{
 }
 
 .artist-basics a:hover{
-  color: white;
+  font-size: 102%;
 }
 
 
@@ -479,7 +478,7 @@ footer{
   padding-top: 0px;
   margin-top: 10px;
   padding-bottom: 10px;
-  height: 30%;
+  height: 200px;
   width: 93%;
   overflow: scroll;
 }
