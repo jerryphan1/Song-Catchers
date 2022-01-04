@@ -329,6 +329,7 @@ h2:hover{
   text-decoration: none;
 }
 
+
 .artist-basic-followers{
   font-size: 16px;
   font-weight: 500;
@@ -371,7 +372,6 @@ h2:hover{
 }
 
 .top-songs{
-  /* white-space: nowrap; */
   overflow: hidden;
   text-overflow: clip;
   padding-left: 22px;
@@ -388,6 +388,10 @@ h2:hover{
   opacity: 0.75;
   margin: 5px 3px;
   text-align: left;
+}
+
+.top-songs li a:hover, .common-artists li a:hover{
+  color: rgb(112, 112, 121);
 }
 
 .artist-h2{
