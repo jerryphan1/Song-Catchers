@@ -260,7 +260,7 @@ h2:hover{
 
 .clickable-tr:hover{
   /* background-color: blue; */
-  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+  box-shadow: 0 0 13px rgba(0,0,0,0.13);
 }
 
 .middle-titles{
