@@ -1,7 +1,8 @@
 #artist-info-container {
   display: flex;
-  border: 1px solid black;
-  border-style: dashed;
+  /* border: 1px solid black; */
+  /* border-style: dashed; */
+  box-shadow: 0 4px 6px 0 hsla(0,0%,0%,0.2);
   flex-direction: column;
   margin: 5px auto;
   width: 28%;

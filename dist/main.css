@@ -75,9 +75,7 @@ h2:hover{
 
 #main-container{
   display: flex;
-  border: 1px;
-  border-style: dashed;
-  background-color: lightgray;
+  background-color: rgba(255, 255, 255, 0.733);
   font-family: Helvetica;
   height: 100%;
 }
@@ -113,6 +111,10 @@ footer{
 
 .left-container-collapse .nav-label{
   display: none;
+}
+
+.nav-label{
+  color:white;
 }
 
 .collapsible, .collapse-left{
@@ -263,6 +265,9 @@ footer{
   width: 40vw;
   padding: 35px;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search-bar {
@@ -345,7 +350,7 @@ footer{
 }
 
 #table-content tr:nth-child(n+2){
-  border: 1px solid black;
+  border: 0.5px solid #00000026;
 }
 
 
@@ -360,10 +365,12 @@ footer{
 }
 
 .middle-titles{
-  margin: 5px 0px;
+  margin: 0px 0px;
   width: 100%;
   font-weight: 550;
   border: none;
+  border-bottom: 1px solid black;
+
 }
 
 .artist-table-info {
@@ -390,8 +397,9 @@ footer{
   \**********************************************************************************************************/
 #artist-info-container {
   display: flex;
-  border: 1px solid black;
-  border-style: dashed;
+  /* border: 1px solid black; */
+  /* border-style: dashed; */
+  box-shadow: 0 4px 6px 0 hsla(0,0%,0%,0.2);
   flex-direction: column;
   margin: 5px auto;
   width: 28%;
@@ -503,6 +511,7 @@ footer{
 .artist-h2{
   font-weight: 700;
 }
+
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/

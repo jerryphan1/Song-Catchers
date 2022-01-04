@@ -26,6 +26,9 @@
   width: 40vw;
   padding: 35px;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search-bar {
@@ -108,7 +111,7 @@
 }
 
 #table-content tr:nth-child(n+2){
-  border: 1px solid black;
+  border: 0.5px solid #00000026;
 }
 
 
@@ -123,10 +126,12 @@
 }
 
 .middle-titles{
-  margin: 5px 0px;
+  margin: 0px 0px;
   width: 100%;
   font-weight: 550;
   border: none;
+  border-bottom: 1px solid black;
+
 }
 
 .artist-table-info {
