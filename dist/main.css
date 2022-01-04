@@ -81,10 +81,19 @@ h2:hover{
   height: 100%;
 }
 
-#top-middle {
-  text-align: center;
-}
 
+
+footer{
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+  /* color: black; */
+  font-size: 20px;
+}
+/*!*************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/left_container.css ***!
+  \*************************************************************************************************************/
 .left-container{
   display: flex;
   flex-direction: column;
@@ -95,7 +104,6 @@ h2:hover{
   height: 100%;
   transition: width 0.3s;
   align-items: center;
-  /* flex-shrink: 0; */
 }
 
 .left-container-collapse{
@@ -145,10 +153,6 @@ h2:hover{
   flex-shrink: 0;
 }
 
-/* .icon-container > i {
-  text-align: center;
-} */
-
 .left-content{
   width: 100%;
   background-color: #fdffff80;
@@ -159,15 +163,14 @@ h2:hover{
 }
 
 .fa-sliders-h {
-  /* font-size: 34px; */
   cursor: pointer;
 }
 
 
 .fab {
   color: black;
-  font-size: 34px;
-  padding: 10px 20px;
+  font-size: 36px;
+  padding: 10px 15px;
   transition: all 1s;
 }
 
@@ -183,18 +186,37 @@ h2:hover{
   0% {
     transform: rotateY(0deg); 
   }
+  33%{
+    transform: rotateY(90deg); 
+    color: rgb(74, 122, 122);
+  }
   50% {
     transform: rotateY(180deg); 
     color: rgb(120, 221, 221);
   }
+  67%{
+    transform: rotateY(180deg); 
+    color: rgb(23, 85, 85);
+  }
   100% {
     transform: rotateY(360deg); 
-    color: rgb(20, 39, 37);
+    color: rgb(85, 85, 85);
   } 
+}
+/*!************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/table_content.css ***!
+  \************************************************************************************************************/
+#top-middle {
+  text-align: center;
 }
 
 .remove:hover{
   color: white;
+}
+
+.fa-sort:hover {
+  color: white;
+  cursor: pointer;
 }
 
 #middle-container{
@@ -316,11 +338,6 @@ h2:hover{
   font-weight: 550;
 }
 
-.fa-sort:hover {
-  color: white;
-  cursor: pointer;
-}
-
 .artist-table-info {
   width: 100%;
   margin: 5px 0px;
@@ -336,16 +353,9 @@ h2:hover{
 .hide-artist-id {
   display: none
 }
-
-/* #right-container{
-  display: flex;
-  border: 1px solid black;
-  border-style: dashed;
-  padding: 10px;
-  margin: 5px auto;
-  width: 25%;
-} */
-
+/*!**********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/artist_info.css ***!
+  \**********************************************************************************************************/
 #artist-info-container {
   display: flex;
   border: 1px solid black;
@@ -355,9 +365,6 @@ h2:hover{
   width: 28%;
 }
 
-/* #artist-info-container:hover{
-  display: none;
-} */
 
 #artist-info-top{
   display: flex;
@@ -450,15 +457,6 @@ h2:hover{
 
 .artist-h2{
   font-weight: 700;
-}
-
-footer{
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  bottom: 0;
-  /* color: black; */
-  font-size: 20px;
 }
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!

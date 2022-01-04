@@ -1,0 +1,102 @@
+#artist-info-container {
+  display: flex;
+  border: 1px solid black;
+  border-style: dashed;
+  flex-direction: column;
+  margin: 5px auto;
+  width: 28%;
+}
+
+
+#artist-info-top{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.artist-pic {
+  height: 160px;
+  width: 160px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.artist-basics {
+  margin: 10px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.artist-basics a, .top-songs a, .common-artists a{
+  color: black;
+  text-decoration: none;
+}
+
+
+.artist-basic-followers{
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.90;
+}
+
+.artist-basic-followers > span{
+  opacity: 0.70;
+  font-size: 14px;
+}
+
+#artist-info-bottom{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+#artist-info-bottom > div{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+}
+
+#song-lyrics{
+  text-align: center;
+}
+
+#song-lyrics  p:first-child{
+  font-size: 26px;
+  margin: 12px;
+  font-weight: 600px;
+}
+
+#song-lyrics  p:nth-child(2){
+  font-size: 14px;
+  opacity: 0.75;
+  margin: 20px;
+  padding-top: 0px;
+}
+
+.top-songs{
+  overflow: hidden;
+  text-overflow: clip;
+  padding-left: 22px;
+}
+
+.common-artists{
+  overflow: hidden;
+  text-overflow: clip;
+  padding-left: 24px;
+}
+
+.top-songs > li, .common-artists > li{
+  font-size: 12px;
+  opacity: 0.75;
+  margin: 5px 3px;
+  text-align: left;
+}
+
+.top-songs li a:hover, .common-artists li a:hover{
+  color: rgb(112, 112, 121);
+}
+
+.artist-h2{
+  font-weight: 700;
+}

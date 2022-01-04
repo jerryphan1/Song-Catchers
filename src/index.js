@@ -1,13 +1,6 @@
-import {Fetch} from './scripts/fetch.js';
-import {Util} from './scripts/util.js';
-document.addEventListener('DOMContentLoaded', (event) => {
-  console.log('DOM');
-  let util = new Util();
-  let fetch = new Fetch();
-  // fetch.getSongLyrics();
-  util.collapseLeftBar()
-  util.submitSong();
-  util.toggleSort();
-  util.getTableInfo();
-  util.collapseLeftSide();
+import {Event} from './scripts/events.js';
+
+document.addEventListener('DOMContentLoaded', (e) => {
+  let event = new Event();
+  event.startAllEvents();
 });

@@ -1,0 +1,147 @@
+#top-middle {
+  text-align: center;
+}
+
+.remove:hover{
+  color: white;
+}
+
+.fa-sort:hover {
+  color: white;
+  cursor: pointer;
+}
+
+#middle-container{
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  font-size: 18px;
+  line-height: 1.6;
+  /* position: relative; */
+  border: 1px solid black;
+  border-style: dashed;
+  margin: 5px auto;
+  width: 55%;
+}
+
+.content {
+  /* width: 40vw; */
+  width: 40vw;
+  padding: 15px;
+  position: relative;
+}
+
+.search-bar {
+  border: 2px solid ;
+  display: flex;
+  border-radius: 9000px;
+  height: 40px; 
+  width: 40px; 
+  padding: 2px;
+  position: relative;
+  transition: width 500ms ease-in-out;
+}
+
+.search-bar-input {
+  flex-grow: 1;
+  font-size: 20px;
+  padding: 0 20px;
+  border: 0;
+  background: none;
+  outline: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  line-height: 38px;
+  opacity: 0;
+  cursor: pointer;
+  color: rgba(32, 30, 30, 0.959);
+}
+
+.search-bar-submit {
+  font-size: 20px;
+  cursor: pointer;
+  border: 0px;
+  border-radius: 100vh;
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+  background: transparent;
+  transition: background-color 250ms ease-in-out;
+
+}
+
+.search-bar:hover .search-bar-submit {
+  color: white;
+  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+.search-bar:focus {
+  outline: 0;
+}
+
+.search-bar:focus-within {
+  width: 100%;
+}
+
+.search-bar:focus-within .search-bar-submit{
+  background-color: rgb(43, 161, 136);
+  color: white;
+  box-shadow: 0 0 20px rgba(0,0,0,0.25);
+}
+
+.search-bar:focus-within .search-bar-input{
+  transition: opacity 500ms ease-in-out;
+  opacity: 1;
+  cursor: initial;
+  width: 80%;
+}
+
+#table-content {
+  width: 100%;
+}
+
+#table-content tr{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin: 0px;
+  border: 1px solid black;
+  border-style: dashed;
+}
+
+.clickable-tr{
+  cursor: pointer;
+}
+
+
+.clickable-tr:hover{
+  /* background-color: blue; */
+  box-shadow: 0 0 13px rgba(0,0,0,0.13);
+}
+
+.middle-titles{
+  margin: 5px 0px;
+  width: 100%;
+  font-weight: 550;
+}
+
+.artist-table-info {
+  width: 100%;
+  margin: 5px 0px;
+  padding: 0 5px;
+  font-size: 14px;
+  text-overflow: wrap;
+}
+
+.title{
+  font-weight: 550;
+}
+
+.hide-artist-id {
+  display: none
+}

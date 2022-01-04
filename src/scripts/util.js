@@ -1,54 +1,6 @@
 import {Fetch} from './fetch.js';
 let fetch = new Fetch();
 export class Util {
-
-  collapseLeftBar() {
-    document.querySelectorAll('.collapsible').forEach((button) => {
-      button.addEventListener('click', () => {
-        button.classList.toggle('active');
-        this.resetCollapseLeftSide();
-      })
-    })
-  };
-
-  collapseLeftSide(){
-    let collapse = document.querySelector('.collapse-left')
-    collapse.addEventListener('click', () => {
-      let collapseContainer = document.querySelector('.left-container')
-      collapseContainer.classList.toggle('left-container-collapse')
-
-      if (collapseContainer.classList.contains('left-container-collapse')) {
-        this.resetActiveState();
-      }
-    })
-  }
-
-  resetCollapseLeftSide(){
-    let collapseContainer = document.querySelector('.left-container')
-    if (collapseContainer.classList.contains('left-container-collapse')) {
-      collapseContainer.classList.remove('left-container-collapse')
-    }
-  }
-
-  resetActiveState(){
-    document.querySelectorAll('.collapsible').forEach((button) => {
-      button.classList.remove('active')
-    })
-  }
-
-  submitSong() {
-    let input = document.querySelector('.search-bar-input')
-    let searchBar = document.querySelector('.search-bar')
-
-    searchBar.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      //value is a string
-      let tableValues = await fetch.getTrackFromSubmit(input.value)
-      this.makeTable(tableValues)
-      input.value = ''
-    })
-  }
-
   makeTable(values){
     this.clearTable();
     sessionStorage.setItem('tableData', JSON.stringify(values));
@@ -75,6 +27,15 @@ export class Util {
     }
   }
 
+  clearTable() {
+    const deleteColumns = document.querySelectorAll('#table-content > tr')
+    deleteColumns.forEach((col) => {
+      col.remove()
+    })
+  }
+
+
+  //adds delete icon 
   createDelete(){
     const icon = document.createElement("i");
     icon.classList.add('fas','fa-trash','remove');
@@ -84,81 +45,6 @@ export class Util {
     return thDel;
   }
 
-
-  //event listener that takes advantage of bubbling property to add one event listner to every row
-  getTableInfo(){
-    let table = document.querySelector('#table-content');
-    table.addEventListener('click', (e) => {
-      if (e.target.classList.contains('fa-trash') && e.target.classList.contains('remove')) {
-        let deleted = e.target.parentElement.parentElement
-        this.updateSessionStorage(deleted);
-        deleted.remove()
-      } else if (!e.target.classList.contains('middle-titles') && !e.target.classList.contains('fa-sort')) {
-        const tr = e.target.parentElement;
-        // id is the table id
-        if (!tr.id) {
-          const artist = tr.querySelector('.artist').innerText;
-          const title = tr.querySelector('.title').innerText;
-          const artistId = tr.querySelector('.hide-artist-id').innerText;
-          this.fillArtistInfo(artistId,artist,title)
-          this.addLyrics(artist,title)
-        }
-      }
-    })
-  }
-
-  updateSessionStorage(data){
-    const artist = data.querySelector('.artist').innerText;
-    const title = data.querySelector('.title').innerText;
-    const artistId = data.querySelector('.hide-artist-id').innerText;
-    let keys = JSON.parse(sessionStorage.getItem('tableData'))
-    for (let i = 0; i < keys.length; i++) {
-      if (keys[i].title === title && keys[i].artist == artist && keys[i].artistId == artistId) {
-        keys.splice(i,1)
-        return sessionStorage.setItem('tableData', JSON.stringify(keys));
-      }
-    }
-  }
-
-  async fillArtistInfo(input){
-    let artistInfo = await fetch.getArtist(input)
-    let artistTracks = await fetch.getArtistTracks(input)
-    let relatedArtists = await fetch.getRelatedArtists(input)
-    this.clearArtistInfoTop();
-    this.clearArtistInfoBottom();
-    this.addArtistInfo(artistInfo);
-    this.addArtistTracks(artistTracks);
-    this.addRelatedArtists(relatedArtists)
-  }
-
-  clearTable() {
-    const deleteColumns = document.querySelectorAll('#table-content > tr')
-    deleteColumns.forEach((col) => {
-      col.remove()
-    })
-  }
-
-  // clearToggle() {
-  //   const sorts = document.querySelectorAll('.middle-titles > i')
-  //   sorts.forEach((icon) => {
-  //     icon.classList.remove('active-sort')
-  //   })
-  // }
-
-  toggleSort() {
-    const sorts = document.querySelectorAll('.middle-titles > i')
-    sorts.forEach((icon) => {
-      icon.addEventListener('click', () => {
-        icon.classList.toggle('active-sort')
-        if (icon.classList.contains('active-sort')) {
-          this.sortTable(icon.dataset.value,true)
-        } else {
-          this.sortTable(icon.dataset.value,false)
-        }
-      })
-    })
-  }
-  
   sortTable(column,status) {
     //status would be a toggled class saying if its sorted or
     let table = JSON.parse(sessionStorage.getItem('tableData'))
@@ -174,10 +60,16 @@ export class Util {
     this.makeTable(sorted)
   }
 
-  clearArtistInfoTop(){
-    const outerDiv = document.querySelector('#artist-info-top');
-    while (outerDiv.firstChild) {
-      outerDiv.removeChild(outerDiv.lastChild);
+  updateSessionStorage(data){
+    const artist = data.querySelector('.artist').innerText;
+    const title = data.querySelector('.title').innerText;
+    const artistId = data.querySelector('.hide-artist-id').innerText;
+    let keys = JSON.parse(sessionStorage.getItem('tableData'))
+    for (let i = 0; i < keys.length; i++) {
+      if (keys[i].title === title && keys[i].artist == artist && keys[i].artistId == artistId) {
+        keys.splice(i,1)
+        return sessionStorage.setItem('tableData', JSON.stringify(keys));
+      }
     }
   }
 
@@ -246,13 +138,6 @@ export class Util {
     artistInfo.append(div)
   }
 
-  clearArtistInfoBottom(){
-    const outerDiv = document.querySelector('#artist-info-bottom');
-    while (outerDiv.firstChild) {
-      outerDiv.removeChild(outerDiv.lastChild);
-    }
-  }
-
   async addLyrics(artist,title){
     this.clearLyrics()
     let lyrics = await fetch.getSongLyrics(artist,title)
@@ -271,7 +156,20 @@ export class Util {
       lyricsP.innerText = sliceLyrics;
     }
     lyricContainer.append(titleP,lyricsP)
-    
+  }
+
+  clearArtistInfoBottom(){
+    const outerDiv = document.querySelector('#artist-info-bottom');
+    while (outerDiv.firstChild) {
+      outerDiv.removeChild(outerDiv.lastChild);
+    }
+  }
+
+  clearArtistInfoTop(){
+    const outerDiv = document.querySelector('#artist-info-top');
+    while (outerDiv.firstChild) {
+      outerDiv.removeChild(outerDiv.lastChild);
+    }
   }
 
   clearLyrics(){
@@ -279,6 +177,17 @@ export class Util {
     while (lyricContainer.firstChild) {
       lyricContainer.removeChild(lyricContainer.lastChild)
     }
+  }
+
+  async fillArtistInfo(input){
+    let artistInfo = await fetch.getArtist(input)
+    let artistTracks = await fetch.getArtistTracks(input)
+    let relatedArtists = await fetch.getRelatedArtists(input)
+    this.clearArtistInfoTop();
+    this.clearArtistInfoBottom();
+    this.addArtistInfo(artistInfo);
+    this.addArtistTracks(artistTracks);
+    this.addRelatedArtists(relatedArtists)
   }
 
 }
