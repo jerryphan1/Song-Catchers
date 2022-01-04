@@ -19,7 +19,7 @@ export class Fetch {
     });
   }
 
-  async getTrack(input) {
+  async getTrackFromSubmit(input) {
     let token = await this.getToken();
     let result = encodeURIComponent(input) //special character parser thingy
     return fetch(`https://api.spotify.com/v1/search?q=${result}&type=track&market=ES&limit=10`, {
@@ -45,6 +45,29 @@ export class Fetch {
       console.log('something went wrong',err)
     })
   }
+
+
+  // async getTrack(trackID){
+  //   let token = await this.getToken();
+  //   return fetch(`https://api.spotify.com/v1/artists/${input}`, {
+  //     headers: {
+  //       'Authorization': token.token_type + ' ' + token.access_token,
+  //       'Content-Type': 'application/x-www-form-urlencoded'
+  //     }
+  //   }).then(function(resp) {
+  //     return resp.json();
+  //   }).then(function(data) {
+  //     const artistInfo = {
+  //       name: data['name'],
+  //       followers: data['followers']['total'],
+  //       image: data['images'][data.images.length -1]['url'],
+  //       uri: data['uri']
+  //     }
+  //     return artistInfo;
+  //   }).catch(function(err) {
+  //     console.log('something went wrong', err)
+  //   })
+  // }
 
   // want to get artist image, total followers, name
   async getArtist(input) {

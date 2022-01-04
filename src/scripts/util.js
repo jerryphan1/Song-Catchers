@@ -43,7 +43,7 @@ export class Util {
     searchBar.addEventListener('submit', async (e) => {
       e.preventDefault();
       //value is a string
-      let tableValues = await fetch.getTrack(input.value)
+      let tableValues = await fetch.getTrackFromSubmit(input.value)
       this.makeTable(tableValues)
       input.value = ''
     })
@@ -91,8 +91,7 @@ export class Util {
     table.addEventListener('click', (e) => {
       if (e.target.classList.contains('fa-trash') && e.target.classList.contains('remove')) {
         let deleted = e.target.parentElement.parentElement
-        console.log(deleted)
-        this.sessionStorageTest(deleted);
+        this.updateSessionStorage(deleted);
         deleted.remove()
       } else if (!e.target.classList.contains('middle-titles') && !e.target.classList.contains('fa-sort')) {
         const tr = e.target.parentElement;
@@ -101,18 +100,17 @@ export class Util {
           const artist = tr.querySelector('.artist').innerText;
           const title = tr.querySelector('.title').innerText;
           const artistId = tr.querySelector('.hide-artist-id').innerText;
-          this.fillArtistInfo(artistId)
+          this.fillArtistInfo(artistId,artist,title)
           this.addLyrics(artist,title)
         }
       }
     })
   }
 
-  sessionStorageTest(data){
+  updateSessionStorage(data){
     const artist = data.querySelector('.artist').innerText;
     const title = data.querySelector('.title').innerText;
     const artistId = data.querySelector('.hide-artist-id').innerText;
-    // console.log(JSON.parse(sessionStorage.getItem('tableData')))
     let keys = JSON.parse(sessionStorage.getItem('tableData'))
     for (let i = 0; i < keys.length; i++) {
       if (keys[i].title === title && keys[i].artist == artist && keys[i].artistId == artistId) {
