@@ -196,10 +196,13 @@ export class Util {
         let a = document.createElement('a')
         a.href = information.uri
         a.innerText = `${information.name}`
-        p.innerText ='Artist: '
         p.append(a)
       } else {
-        p.innerText = `Followers: ${information.followers.toLocaleString('en-US')}`
+        p.classList.add('artist-basic-followers')
+        let span = document.createElement('span')
+        span.innerText = `${information.followers.toLocaleString('en-US')}`
+        p.innerText = `Followers: `
+        p.append(span)
       }
       div.append(p)
     }
@@ -211,17 +214,17 @@ export class Util {
     const div = document.createElement('div');
     const h2 = document.createElement('h2');
     h2.innerText = 'Popular Songs';
-    const ul = document.createElement('ul')
-    ul.classList.add('top-songs')
+    const ol = document.createElement('ol')
+    ol.classList.add('top-songs')
     for (let i = 0; i < information.length; i++){
       const li = document.createElement('li')
       const a = document.createElement('a')
       a.href = information[i].preview;
       a.innerText = `${information[i].name}`;
       li.append(a)
-      ul.append(li)
+      ol.append(li)
     }
-    div.append(h2,ul)
+    div.append(h2,ol)
     artistInfo.append(div)
   }
 
@@ -229,18 +232,19 @@ export class Util {
     const artistInfo = document.querySelector('#artist-info-bottom');
     const div = document.createElement('div');
     const h2 = document.createElement('h2');
+    h2.classList.add('artist-h2');
     h2.innerText = 'Similar Artists';
-    const ul = document.createElement('ul')
-    ul.classList.add('common-artists')
+    const ol = document.createElement('ol')
+    ol.classList.add('common-artists')
     for (let i = 0; i < information.length; i++){
       const li = document.createElement('li')
       const a = document.createElement('a')
       a.href = information[i].uri;
       a.innerText = `${information[i].artist}`;
       li.append(a)
-      ul.append(li)
+      ol.append(li)
     }
-    div.append(h2,ul)
+    div.append(h2,ol)
     artistInfo.append(div)
   }
 

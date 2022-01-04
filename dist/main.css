@@ -53,7 +53,22 @@ table {
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/style.css ***!
   \****************************************************************************************************/
 h2 {
-  font-size: 24px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+#name{
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+h2:hover{
+  cursor: pointer;
+  color: white;
 }
 
 #main-container{
@@ -157,6 +172,10 @@ h2 {
   padding: 10px;
 }
 
+.remove:hover{
+  color: white;
+}
+
 #middle-container{
   display: flex;
   /* justify-content: center; */
@@ -252,6 +271,7 @@ h2 {
 #table-content tr{
   display: flex;
   justify-content: center;
+  align-items: center;
   text-align: center;
   width: 100%;
   margin: 0px;
@@ -263,6 +283,7 @@ h2 {
   cursor: pointer;
 }
 
+
 /* .clickable-tr:hover{
   background-color: blue;
 } */
@@ -271,10 +292,6 @@ h2 {
   margin: 5px 0px;
   width: 100%;
   font-weight: 550;
-}
-
-.delete:hover {
-  color:white;
 }
 
 .fa-sort:hover {
@@ -288,6 +305,10 @@ h2 {
   padding: 0 5px;
   font-size: 14px;
   text-overflow: wrap;
+}
+
+.title{
+  font-weight: 550;
 }
 
 .hide-artist-id {
@@ -331,12 +352,24 @@ h2 {
 
 .artist-basics {
   margin: 10px;
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: 600;
 }
 
 .artist-basics a, .top-songs a, .common-artists a{
   color: black;
   text-decoration: none;
+}
+
+.artist-basic-followers{
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.90;
+}
+
+.artist-basic-followers > span{
+  opacity: 0.70;
+  font-size: 14px;
 }
 
 #artist-info-bottom{
@@ -356,10 +389,40 @@ h2 {
   text-align: center;
 }
 
-.top-songs, .common-artists  {
+#song-lyrics  p:first-child{
+  font-size: 26px;
+  margin: 12px;
+  font-weight: 600px;
+}
+
+#song-lyrics  p:nth-child(2){
+  font-size: 14px;
+  opacity: 0.75;
+  margin: 20px;
+}
+
+.top-songs{
   /* white-space: nowrap; */
   overflow: hidden;
   text-overflow: clip;
+  padding-left: 22px;
+}
+
+.common-artists{
+  overflow: hidden;
+  text-overflow: clip;
+  padding-left: 24px;
+}
+
+.top-songs > li, .common-artists > li{
+  font-size: 12px;
+  opacity: 0.75;
+  margin: 5px 3px;
+  text-align: left;
+}
+
+.artist-h2{
+  font-weight: 700;
 }
 
 footer{
@@ -367,12 +430,8 @@ footer{
   text-align: center;
   width: 100%;
   bottom: 0;
+  /* color: black; */
   font-size: 20px;
-  margin-top: 10px;
-}
-
-.fa-adjust{
-  color: black;
 }
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
