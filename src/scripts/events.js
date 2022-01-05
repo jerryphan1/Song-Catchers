@@ -97,18 +97,20 @@ export class Event{
       }
     })
   }
-
   checkLeftCollapse(){
     let left = document.querySelector('.left-container')
     left.addEventListener(('click'), (e) => {
       let rightDiv = document.querySelector('#artist-info-container')
-      console.log(rightDiv.innerText.length)
       if (left.classList.contains('left-container-collapse') && 
             rightDiv.innerText.length !== 0) {
         rightDiv.style.width = '42%'
       } else if  (left.classList.contains('left-container-collapse') && 
           rightDiv.innerText.length === 0){
-        rightDiv.style.width = '0%'
+        rightDiv.style.width = '0%';
+      } else if (!left.classList.contains('left-container-collapse') && 
+      rightDiv.innerText.length === 0){
+        // document.querySelector('#middle-container').style.width = '98%'
+        rightDiv.style.width = '0%';
       } else {
         rightDiv.style.width = '28%'
       }
