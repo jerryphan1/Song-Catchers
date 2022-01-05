@@ -150,3 +150,17 @@ export class Fetch {
 
 }
 
+
+
+// let test = [
+//   0: {title: 'Blank Space', artist: 'Taylor Swift', releaseDate: '2014-01-01', artistId: '06HL4z0CvFAxyc27GXpf02'}
+//   1: {title: 'Blank Space/Stand By Me - Live From Spotify London', artist: 'Imagine Dragons', releaseDate: '2015-04-20', artistId: '53XhwfbYqKCa1cC15pYq2q'}
+//   2: {title: 'Blank Space / Jealous (Acoustic Mashup)', artist: 'Megan Davies', releaseDate: '2021-02-05', artistId: '09kCHZp9iFO2FJNb9lR6G5'}
+//   3: {title: 'Blank Space', artist: 'Taylor Swift', releaseDate: '2014-01-01', artistId: '06HL4z0CvFAxyc27GXpf02'}
+//   4: {title: 'Blank Space', artist: 'Ryan Adams', releaseDate: '2015-09-21', artistId: '2qc41rNTtdLK0tV3mJn2Pm'}
+//   5: {title: 'Blank Space', artist: 'I Prevail', releaseDate: '2014-12-16', artistId: '3Uobr6LgQpBbk6k4QGAb3V'}
+//   6: {title: 'Blank Space - Acoustic', artist: 'Tyler Ward', releaseDate: '2015-04-13', artistId: '5Hc9oDGvStNGmnj44m8sHg'}
+//   7: {title: 'Blank Space', artist: 'Brooklyn Duo', releaseDate: '2014-11-27', artistId: '6wBOZ9D65AcqUlfKUqsQ7R'}
+//   8: {title: 'Blank Space', artist: 'Wasback', releaseDate: '2021-08-06', artistId: '3rmYE7edorDWoKVPGk9iLZ'}
+//   9: {title: 'Blank Space', artist: 'RHODES', releaseDate: '2015-09-18', artistId: '07FfkbljNIdl45Ijlh1aXS'}
+// ]

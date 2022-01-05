@@ -47,6 +47,7 @@ export class Event{
       e.stopPropagation();
       //value is a string
       let tableValues = await fetch.getTrackFromSubmit(input.value)
+      console.log(tableValues)
       util.makeTable(tableValues)
       input.value = ''
     })
