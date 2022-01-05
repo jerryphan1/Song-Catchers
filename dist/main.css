@@ -263,7 +263,7 @@ footer{
   font-size: 18px;
   line-height: 1.6;
   margin: 0px auto;
-  width: 55%;
+  width: 95%;
   background-color: rgba(255, 255, 255, 0.733);
   transition: width 0.3s;
 }
@@ -409,7 +409,7 @@ footer{
   background-color: rgba(255, 255, 255, 0.733);
   flex-direction: column;
   margin: 0px auto;
-  width: 30%;
+  width: 0%;
   transition: width 0.3s;
 }
 

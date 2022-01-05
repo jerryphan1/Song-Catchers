@@ -83,6 +83,9 @@ export class Event{
       } else if (!e.target.classList.contains('middle-titles') && !e.target.classList.contains('fa-sort')) {
         const tr = e.target.parentElement;
         this.updateRightWidth();
+        document.querySelector('#middle-container').style.width = '55%'
+
+        // this.updateMiddleWidthFromRight();
         // id is the table id
         if (!tr.id) {
           const artist = tr.querySelector('.artist').innerText;
@@ -99,15 +102,15 @@ export class Event{
     let left = document.querySelector('.left-container')
     left.addEventListener(('click'), (e) => {
       let rightDiv = document.querySelector('#artist-info-container')
-      console.log(rightDiv.innerText)
+      console.log(rightDiv.innerText.length)
       if (left.classList.contains('left-container-collapse') && 
-            rightDiv.innerText != "") {
-        rightDiv.style.width = '38%'
+            rightDiv.innerText.length !== 0) {
+        rightDiv.style.width = '42%'
       } else if  (left.classList.contains('left-container-collapse') && 
-          rightDiv.innerText === ""){
+          rightDiv.innerText.length === 0){
         rightDiv.style.width = '0%'
       } else {
-        rightDiv.style.width = '30%'
+        rightDiv.style.width = '28%'
       }
     })
   }
@@ -115,25 +118,13 @@ export class Event{
   updateRightWidth(){
     let rightDiv = document.querySelector('#artist-info-container')
     let left = document.querySelector('.left-container')
-    if (left.classList.contains('left-container-collapse') && 
-    rightDiv.innerText === "") {
-    rightDiv.style.width = '38%'
-    }
+    if (left.classList.contains('left-container-collapse')) {
+      rightDiv.style.width = '42%'
+    } else  {
+        rightDiv.style.width = '28%'
+      }
   }
 
-  updateMiddleWidth(){
-    let left = document.querySelector('.left-container')
-    let rightDiv = document.querySelector('#artist-info-container')
-    let middleDiv = document.querySelector('#middle-container')
-    left.addEventListener('click', (e) => {
-      if (left.classList.contains('left-container-collapse') && 
-      rightDiv.innerText === "") {
-        middleDiv.style.width = '88%'
-      } else {
-        middleDiv.style.width = '55%'
-      }
-    })
-  }
 
   startAllEvents(){
     this.collapseLeftBar()
@@ -142,7 +133,6 @@ export class Event{
     this.getTableInfo();
     this.collapseLeftSide();
     this.checkLeftCollapse();
-    this.updateMiddleWidth();
   }
 
 }
