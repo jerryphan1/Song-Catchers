@@ -66,7 +66,7 @@ export class Fetch {
         let arr = ['./images/easter-egg1.jpg', './images/easter-egg2.jpg',
                   './images/easter-egg3.jpg', './images/easter-egg4.jpg',
                   './images/easter-egg5.jpg', './images/easter-egg6.jpg']
-        artistInfo.image = arr[Math.floor(Math.random() * arr.length)]
+        artistInfo.image = 'images/easter-egg1.jpg'
       } else {
         artistInfo.image = data['images'][data.images.length -1]['url']
       }
