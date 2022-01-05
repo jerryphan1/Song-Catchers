@@ -1,21 +1,22 @@
-# Song-Catcher
+# Song-Catchers
 
-Play [here!](https://pages.github.com/)
+Play [here!](https://jerryphan1.github.io/Song-Catchers/)
 
 ## Background
 
-A JavaScript project that finds songs for you and showcases varying statistics of it, such as popularity over time and total listens. Find songs using the interactive searchbar and order them by title, artist, or year released. Be sure to look for your favorites and learn more about them!
+A JavaScript project that finds songs for you and showcases lyrics to the song, the given artist's top hits, and related artists! Find songs using the interactive searchbar and order them by title, artist, or year released. Be sure to find your favorite songs to learn more and discover new music!
 
 ## Functionality & MVPs
 
-In Song Catcher, users will be able to:
+In Song Catchers, users will be able to:
 
 - Search for given song in the provided searchbar
 - Order songs by preference of title, artist, or year released 
-- Select songs to provide lyrics to the song, popularity over time, and total listens from release
-- Visualize popularity over time through a provided graph 
+- Select songs to provide lyrics to the song
+- View related artists
+- View top songs of any artist 
 - Expand/shrink left sidebar
-- Toggle between light and dark mode
+- Delete songs from provided hits
 
 In addition, this project will include:
 
@@ -35,7 +36,6 @@ In addition, this project will include:
 
 - [lyrics.ovh](https://lyricsovh.docs.apiary.io/#reference/0/lyrics-of-a-song/search)
 - [Spotify API](https://developer.spotify.com/documentation/web-api/)
-- [D3](https://d3js.org/)
 - [Webpack](https://webpack.js.org/)
 - [NPM](https://www.npmjs.com/)
 
@@ -63,5 +63,6 @@ Ensure working links and toggle features.
 
 ## Bonus
 
-- User ability to delete songs 
+- View song popularity over time
 - Save songs to local account 
+- Mobile friendly
