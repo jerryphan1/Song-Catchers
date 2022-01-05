@@ -1,3 +1,5 @@
+
+
 export class Fetch {
   getToken() {
     let client_id = '661979470da84b9ead5db04fcede6ada';
@@ -64,7 +66,7 @@ export class Fetch {
         uri: data['uri']
       }
       if (data['images'].length === 0) {
-        artistInfo.image = '/easter-egg.jpg'
+        artistInfo.image = './easter-egg.jpg'
       } else {
         artistInfo.image = data['images'][data.images.length -1]['url']
       }
