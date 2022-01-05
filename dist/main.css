@@ -471,9 +471,9 @@ footer{
   width: 95%;
 }
 
-#artist-info-bottom div:first-child h2:first-child{
+/* #artist-info-bottom div:first-child h2:first-child{
   margin-left: 13px;
-}
+} */
 
 #song-lyrics{
   display: flex;
@@ -521,13 +521,14 @@ footer{
   font-size: 12px;
   opacity: 0.75;
   margin: 5px 3px;
+  margin-left: 2px;
   text-align: left;
   color: #574949;
 }
 
-.top-songs li a{
-  margin-left: 11px;
-}
+/* .top-songs li a{
+  margin-left: -2px;
+} */
 
 .top-songs li a:hover, .common-artists li a:hover{
   color: rgb(112, 112, 121);
@@ -577,13 +578,13 @@ footer{
 
 /* Modal Content/Box */
 .about-modal-content {
-  background-color: #f5cece;
+  background-color: beige;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 15px;
   border: 0.5px solid #888;
   border-radius: 5px;
   width: 60%; /* Could be more or less, depending on screen size */
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: sans-serif;
   text-align: center;
 }
 
@@ -647,7 +648,7 @@ footer{
 
 /* Modal Content/Box */
 .instruct-modal-content {
-  background-color: #f5cece;
+  background-color: beige;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 15px;
   border: 0.5px solid #888;

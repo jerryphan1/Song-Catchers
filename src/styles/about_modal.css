@@ -35,13 +35,13 @@
 
 /* Modal Content/Box */
 .about-modal-content {
-  background-color: #f5cece;
+  background-color: beige;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 15px;
   border: 0.5px solid #888;
   border-radius: 5px;
   width: 60%; /* Could be more or less, depending on screen size */
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: sans-serif;
   text-align: center;
 }
 
