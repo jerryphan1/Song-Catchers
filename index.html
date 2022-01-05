@@ -19,7 +19,7 @@
     <!-- Modal content -->
     <div class="about-modal-content">
       <span class="about-close">&times;</span>
-      <h2 id='about-h2'>About</h2>
+      <h2 id='about-h2'>ABOUT</h2>
       <p class='about-section'>
         As music continues to grow and expand, so does the desire to learn the lyrics. Whether it
         be a new radio hit, or that one song you heard long ago, we all want to impress our friends 
@@ -35,24 +35,21 @@
     </div>
   </div>
 
-  <!-- About Modal -->
+  <!-- Instruct Modal -->
   <div id="myInstructModal" class="instruct-modal">
     <!-- Modal content -->
     <div class="instruct-modal-content">
       <span class="instruct-close">&times;</span>
-      <h2 id='instruct-h2'>About</h2>
-      <p class='instruct-section'>
-        As music continues to grow and expand, so does the desire to learn the lyrics. Whether it
-        be a new radio hit, or that one song you heard long ago, we all want to impress our friends 
-        whenever we have that spontaneous karaoke night. Song Catchers is a easy to use website that 
-        gives you everything you need for such success.
-      </p>
-      <p class='instruct-section'>
-        Features of this website include a search function to find any song or artist and being able 
-        to view the corresponding lyrics. Users will also be able to see the artist of the specified song 
-        alongside his or her top hits, as well as similar artists. Upon clicking on a top hit or similar artist,
-        users will be directed to the Spotify app for viewing. 
-      </p>
+      <div id = 'instruct-container'>
+        <h2 id='instruct-h2'>INSTRUCTIONS</h2>
+        <ol class='instruct-ol' type='i'>
+          <li>Click the  <i class="fas fa-search" style='font-size: 10px;'></i> icon and search any song by name</li>
+          <li>View returned hits below and sort by either title, artist, or year released</li>
+          <li>Click anywhere inside one of the rows to learn more about song and artist</li>
+          <li>Toggle the collapse menu on the left to free up space</li>
+          <li>Explore and enjoy!</li>
+        </ol>
+      </div>
     </div>
   </div>
 
@@ -78,7 +75,7 @@
         </button>
         <div class="left-content">
           <button id="BtnInstruct">
-            click the  <i class="fas fa-search" style='font-size: 10px;'></i> icon and search any song by name
+            Click here to view Instructions
           </button>
         </div>
 

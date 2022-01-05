@@ -3,6 +3,7 @@
   border: 0.5px solid #00000026;
   /* box-shadow: 0 4px 10px 0 hsla(0,0%,0%,0.3); */
   background-color: #eceaea;
+  width: 100%;
 }
 
 #instruct-h2{
@@ -12,10 +13,15 @@
   text-align: center;
 }
 
-.instruct-section{
+.instruct-ol{
   line-height: 22px;
   padding: 5px;
   color: rgb(49, 61, 59);
+  list-style: circle;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 }
 
 .instruct-modal {
@@ -38,7 +44,14 @@
   padding: 15px;
   border: 0.5px solid #888;
   border-radius: 5px;
-  width: 60%; /* Could be more or less, depending on screen size */
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+#instruct-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* The Close Button */
