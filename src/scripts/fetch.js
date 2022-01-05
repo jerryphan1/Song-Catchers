@@ -64,7 +64,7 @@ export class Fetch {
         uri: data['uri']
       }
       if (data['images'].length === 0) {
-        artistInfo.image = '/missing-profile.png'
+        artistInfo.image = '/easter-egg.jpg'
       } else {
         artistInfo.image = data['images'][data.images.length -1]['url']
       }

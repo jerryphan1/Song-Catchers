@@ -82,6 +82,7 @@ export class Event{
         deleted.remove()
       } else if (!e.target.classList.contains('middle-titles') && !e.target.classList.contains('fa-sort')) {
         const tr = e.target.parentElement;
+        this.checkRightBox();
         // id is the table id
         if (!tr.id) {
           const artist = tr.querySelector('.artist').innerText;
@@ -94,12 +95,39 @@ export class Event{
     })
   }
 
+  checkLeftCollapse(){
+    let left = document.querySelector('.left-container')
+    left.addEventListener(('click'), (e) => {
+      let rightDiv = document.querySelector('#artist-info-container')
+      console.log(rightDiv.innerText)
+      if (left.classList.contains('left-container-collapse') && 
+            rightDiv.innerText != "") {
+        rightDiv.style.width = '38%'
+      } else if  (left.classList.contains('left-container-collapse') && 
+          rightDiv.innerText === ""){
+        rightDiv.style.width = '0%'
+      } else {
+        rightDiv.style.width = '28%'
+      }
+    })
+  }
+
+  checkRightBox(){
+    let rightDiv = document.querySelector('#artist-info-container')
+    let left = document.querySelector('.left-container')
+    if (left.classList.contains('left-container-collapse') && 
+    rightDiv.innerText === "") {
+    rightDiv.style.width = '38%'
+    }
+  }
+
   startAllEvents(){
     this.collapseLeftBar()
     this.submitSong();
     this.toggleSort();
     this.getTableInfo();
     this.collapseLeftSide();
+    this.checkLeftCollapse();
   }
 
 }

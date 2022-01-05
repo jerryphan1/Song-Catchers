@@ -1,3 +1,7 @@
+body{
+  background-color: rgba(255, 255, 255, 0.733);
+}
+
 h2 {
   font-size: 18px;
   font-weight: 700;
@@ -20,9 +24,10 @@ h2:hover{
 
 #main-container{
   display: flex;
-  background-color: rgba(255, 255, 255, 0.733);
   font-family: Helvetica;
   height: 100%;
+  width: 100%;
+  background-color: #727272;
 }
 
 
