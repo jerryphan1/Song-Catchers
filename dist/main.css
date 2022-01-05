@@ -424,6 +424,7 @@ footer{
   width: 140px;
   object-fit: contain;
   border-radius: 50%;
+  margin: 10px;
   box-shadow: 0 4px 10px 0 hsla(0,0%,0%,0.3);
 }
 
@@ -470,13 +471,21 @@ footer{
   width: 95%;
 }
 
+#artist-info-bottom div:first-child h2:first-child{
+  margin-left: 13px;
+}
+
 #song-lyrics{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
 #song-lyrics  p:first-child{
   font-size: 24px;
-  margin: 12px;
+  margin-top: 15px;
+  text-align: center;
   font-weight: 600px;
 }
 
@@ -486,11 +495,13 @@ footer{
   opacity: 0.75;
   margin: 20px;
   padding-top: 0px;
-  margin-top: 10px;
+  margin-top: 13px;
   padding-bottom: 10px;
+  padding-left: 15px;
   height: 30vh;
   width: 97%;
   overflow-y: scroll;
+  text-align: center;
   /* overflow: scroll; */
 }
 
@@ -512,6 +523,10 @@ footer{
   margin: 5px 3px;
   text-align: left;
   color: #574949;
+}
+
+.top-songs li a{
+  margin-left: 11px;
 }
 
 .top-songs li a:hover, .common-artists li a:hover{

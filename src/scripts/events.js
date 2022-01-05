@@ -200,42 +200,6 @@ export class Event{
     }
   }
 
-
-  // instructModal(){
-  //   const instructModal = document.getElementById("myInstructModal");
-
-  //   // Get the button that opens the modal
-  //   const instructBtn = document.getElementById("BtnInstruct");
-
-  //   // Get the <span> element that closes the modal
-  //   const instructSpan = document.getElementsByClassName("instruct-close")[0];
-
-  //   // When the user clicks on the button, open the modal
-  //   // btn.onclick = function() {
-  //   //   modal.style.display = "block";
-  //   // }
-
-  //   instructBtn.addEventListener(('click'), () => {
-  //     instructModal.style.display = "block";
-  //   })
-
-  //   instructSpan.addEventListener(('click'), () => {
-  //     instructModal.style.display = "none";
-  //   })
-
-  //   // When the user clicks on <span> (x), close the modal
-  //   // span.onclick = function() {
-  //   //   modal.style.display = "none";
-  //   // }
-
-  //   // When the user clicks anywhere outside of the modal, close it
-  //   window.onclick = function(event) {
-  //     if (event.target == instructModal) {
-  //       instructModal.style.display = "none";
-  //     }
-  //   }
-  // }
-
   startAllEvents(){
     this.collapseLeftBar()
     this.submitSong();
@@ -244,7 +208,6 @@ export class Event{
     this.collapseLeftSide();
     this.checkLeftCollapse();
     this.aboutModal();
-    // this.instructModal();
   }
 
 }
