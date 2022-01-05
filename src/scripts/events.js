@@ -47,6 +47,7 @@ export class Event{
       e.stopPropagation();
       //value is a string
       let tableValues = await fetch.getTrackFromSubmit(input.value)
+      console.log(tableValues)
       let testRun = this.filterArr(tableValues)
       util.makeTable(testRun.slice(0,10))
       input.value = ''
@@ -151,6 +152,89 @@ export class Event{
       }
   }
 
+  aboutModal(){
+    const aboutModal = document.getElementById("myAboutModal");
+    const instructModal = document.getElementById("myInstructModal");
+    // Get the button that opens the modal
+    const AboutBtn = document.getElementById("BtnAbout");
+    const instructBtn = document.getElementById("BtnInstruct");
+
+    // Get the <span> element that closes the modal
+    const aboutSpan = document.getElementsByClassName("about-close")[0];
+    const instructSpan = document.getElementsByClassName("instruct-close")[0];
+
+    // When the user clicks on the button, open the modal
+    // btn.onclick = function() {
+    //   modal.style.display = "block";
+    // }
+
+    AboutBtn.addEventListener(('click'), () => {
+      aboutModal.style.display = "block";
+    })
+
+    aboutSpan.addEventListener(('click'), () => {
+      aboutModal.style.display = "none";
+    })
+
+
+    instructBtn.addEventListener(('click'), () => {
+      instructModal.style.display = "block";
+    })
+
+    instructSpan.addEventListener(('click'), () => {
+      instructModal.style.display = "none";
+    })
+
+    // When the user clicks on <span> (x), close the modal
+    // span.onclick = function() {
+    //   modal.style.display = "none";
+    // }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == aboutModal) {
+        aboutModal.style.display = "none";
+      } else if (event.target == instructModal) {
+        instructModal.style.display = "none";
+      }
+    }
+  }
+
+
+  // instructModal(){
+  //   const instructModal = document.getElementById("myInstructModal");
+
+  //   // Get the button that opens the modal
+  //   const instructBtn = document.getElementById("BtnInstruct");
+
+  //   // Get the <span> element that closes the modal
+  //   const instructSpan = document.getElementsByClassName("instruct-close")[0];
+
+  //   // When the user clicks on the button, open the modal
+  //   // btn.onclick = function() {
+  //   //   modal.style.display = "block";
+  //   // }
+
+  //   instructBtn.addEventListener(('click'), () => {
+  //     instructModal.style.display = "block";
+  //   })
+
+  //   instructSpan.addEventListener(('click'), () => {
+  //     instructModal.style.display = "none";
+  //   })
+
+  //   // When the user clicks on <span> (x), close the modal
+  //   // span.onclick = function() {
+  //   //   modal.style.display = "none";
+  //   // }
+
+  //   // When the user clicks anywhere outside of the modal, close it
+  //   window.onclick = function(event) {
+  //     if (event.target == instructModal) {
+  //       instructModal.style.display = "none";
+  //     }
+  //   }
+  // }
 
   startAllEvents(){
     this.collapseLeftBar()
@@ -159,6 +243,8 @@ export class Event{
     this.getTableInfo();
     this.collapseLeftSide();
     this.checkLeftCollapse();
+    this.aboutModal();
+    // this.instructModal();
   }
 
 }

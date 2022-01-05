@@ -488,9 +488,10 @@ footer{
   padding-top: 0px;
   margin-top: 10px;
   padding-bottom: 10px;
-  height: 28vh;
+  height: 30vh;
   width: 97%;
-  overflow: scroll;
+  overflow-y: scroll;
+  /* overflow: scroll; */
 }
 
 .top-songs{
@@ -521,6 +522,130 @@ footer{
   font-weight: 700;
 }
 
+/*!**********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/about_modal.css ***!
+  \**********************************************************************************************************/
+#BtnAbout{
+  cursor: pointer;
+  border: 0.5px solid #00000026;
+  /* box-shadow: 0 4px 10px 0 hsla(0,0%,0%,0.3); */
+  background-color: #eceaea;
+}
+
+#about-h2{
+  font-size: 24px;
+  font-weight: 700;
+  margin: 10px;
+  text-align: center;
+}
+
+.about-section{
+  line-height: 22px;
+  padding: 5px;
+  color: rgb(49, 61, 59);
+}
+
+.about-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.about-modal-content {
+  background-color: #f5cece;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 15px;
+  border: 0.5px solid #888;
+  border-radius: 5px;
+  width: 60%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.about-close {
+  color: rgb(0, 0, 0);
+  float:right;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+
+.about-close:hover,
+.about-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+/*!*************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/instruct_modal.css ***!
+  \*************************************************************************************************************/
+#BtnInstruct{
+  cursor: pointer;
+  border: 0.5px solid #00000026;
+  /* box-shadow: 0 4px 10px 0 hsla(0,0%,0%,0.3); */
+  background-color: #eceaea;
+}
+
+#instruct-h2{
+  font-size: 24px;
+  font-weight: 700;
+  margin: 10px;
+  text-align: center;
+}
+
+.instruct-section{
+  line-height: 22px;
+  padding: 5px;
+  color: rgb(49, 61, 59);
+}
+
+.instruct-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.instruct-modal-content {
+  background-color: #f5cece;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 15px;
+  border: 0.5px solid #888;
+  border-radius: 5px;
+  width: 60%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.instruct-close {
+  color: rgb(0, 0, 0);
+  float:right;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+
+.instruct-close:hover,
+.instruct-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/

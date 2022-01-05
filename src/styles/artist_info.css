@@ -84,9 +84,10 @@
   padding-top: 0px;
   margin-top: 10px;
   padding-bottom: 10px;
-  height: 28vh;
+  height: 30vh;
   width: 97%;
-  overflow: scroll;
+  overflow-y: scroll;
+  /* overflow: scroll; */
 }
 
 .top-songs{
