@@ -47,7 +47,6 @@ export class Event{
       e.stopPropagation();
       //value is a string
       let tableValues = await fetch.getTrackFromSubmit(input.value)
-      console.log(tableValues)
       let testRun = this.filterArr(tableValues)
       util.makeTable(testRun.slice(0,10))
       input.value = ''

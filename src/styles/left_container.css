@@ -76,6 +76,10 @@
   line-height: 20px;
 }
 
+.left-content ol span{
+  font-weight: 600;
+}
+
 .fa-sliders-h {
   cursor: pointer;
 }

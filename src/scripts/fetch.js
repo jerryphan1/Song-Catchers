@@ -1,5 +1,3 @@
-
-
 export class Fetch {
   getToken() {
     let client_id = '661979470da84b9ead5db04fcede6ada';
@@ -59,14 +57,16 @@ export class Fetch {
     }).then(function(resp) {
       return resp.json();
     }).then(function(data) {
-      console.log(data)
       const artistInfo = {
         name: data['name'],
         followers: data['followers']['total'],
         uri: data['uri']
       }
       if (data['images'].length === 0) {
-        artistInfo.image = './images/easter-egg.jpg'
+        let arr = ['./images/easter-egg1.jpg', './images/easter-egg2.jpg',
+                  './images/easter-egg3.jpg', './images/easter-egg4.jpg',
+                  './images/easter-egg5.jpg', './images/easter-egg6.jpg']
+        artistInfo.image = arr[Math.floor(Math.random() * arr.length)]
       } else {
         artistInfo.image = data['images'][data.images.length -1]['url']
       }
@@ -147,7 +147,6 @@ export class Fetch {
         return [{title: title}]
     })
   }
-
 }
 
 
