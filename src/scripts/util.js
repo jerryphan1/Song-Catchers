@@ -141,6 +141,7 @@ export class Util {
   async addLyrics(artist,title){
     this.clearLyrics()
     let lyrics = await fetch.getSongLyrics(artist,title)
+    console.log(lyrics)
     let lyricContainer = document.querySelector('#song-lyrics')
     let titleP = document.createElement('p')
     let lyricsP = document.createElement('p')
@@ -153,7 +154,7 @@ export class Util {
       //Paroles de la chanson Nightlight par Illenium
       let startSlice = lyrics[0].lyrics.lyrics.indexOf(`\n`) 
       let sliceLyrics = lyrics[0].lyrics.lyrics.slice(startSlice);
-      lyricsP.innerText = sliceLyrics;
+      startSlice === -1 ? lyricsP.innerText = lyrics[0].lyrics.lyrics : lyricsP.innerText = sliceLyrics
     }
     lyricContainer.append(titleP,lyricsP)
   }

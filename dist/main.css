@@ -79,7 +79,7 @@ h2:hover{
 #main-container{
   display: flex;
   font-family: Helvetica;
-  height: 100%;
+  height: 130vh;
   width: 100%;
   background-color: #727272;
 }
@@ -409,6 +409,7 @@ footer{
   margin: 0px auto;
   width: 0%;
   transition: width 0.3s;
+  height: 130vh;
 }
 
 
@@ -487,8 +488,8 @@ footer{
   padding-top: 0px;
   margin-top: 10px;
   padding-bottom: 10px;
-  height: 215px;
-  width: 93%;
+  height: 28vh;
+  width: 97%;
   overflow: scroll;
 }
 
