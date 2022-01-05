@@ -47,10 +47,33 @@ export class Event{
       e.stopPropagation();
       //value is a string
       let tableValues = await fetch.getTrackFromSubmit(input.value)
-      console.log(tableValues)
-      util.makeTable(tableValues)
+      let testRun = this.filterArr(tableValues)
+      util.makeTable(testRun.slice(0,10))
       input.value = ''
     })
+  }
+
+  filterArr(arr) {
+    let newArr = [];
+    for (let i =0; i<arr.length; i++){
+      if (i===0) newArr.push(arr[i])
+      if (!this.isDupe(newArr,arr[i])) newArr.push(arr[i])
+    }
+    return newArr
+  }
+  
+  isDupe(newArr,ele) {
+    for (let i = 0; i < newArr.length; i++) {
+      let title = newArr[i].title.toUpperCase()
+      let artist = newArr[i].artist.toUpperCase()
+      let id = newArr[i].artistId.toUpperCase()
+      if (title === ele.title.toUpperCase() 
+              && artist === ele.artist.toUpperCase() 
+              && id === ele.artistId.toUpperCase()) {
+        return true
+      }
+    }
+    return false
   }
 
   addBoxShadow(){

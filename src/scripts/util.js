@@ -1,6 +1,7 @@
 import {Fetch} from './fetch.js';
 let fetch = new Fetch();
 export class Util {
+  
   makeTable(values){
     this.clearTable();
     sessionStorage.setItem('tableData', JSON.stringify(values));
