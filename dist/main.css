@@ -53,7 +53,9 @@ table {
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/style.css ***!
   \****************************************************************************************************/
 body{
-  background-color: rgba(255, 255, 255, 0.733);
+  /* background-color: #727272; */
+  /* background-color: rgba(255, 255, 255, 0.733); */
+  /* background-color: #FFFFFFBB; */
 }
 
 h2 {
@@ -407,7 +409,7 @@ footer{
   background-color: rgba(255, 255, 255, 0.733);
   flex-direction: column;
   margin: 0px auto;
-  width: 28%;
+  width: 30%;
   transition: width 0.3s;
 }
 

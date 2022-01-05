@@ -107,7 +107,7 @@ export class Event{
           rightDiv.innerText === ""){
         rightDiv.style.width = '0%'
       } else {
-        rightDiv.style.width = '28%'
+        rightDiv.style.width = '30%'
       }
     })
   }
