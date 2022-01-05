@@ -169,6 +169,12 @@ footer{
   /* overflow: auto; */
 }
 
+.left-content ol{
+  text-align: left;
+  padding-left: 7px;
+  line-height: 20px;
+}
+
 .fa-sliders-h {
   cursor: pointer;
 }
