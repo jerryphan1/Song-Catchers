@@ -52,6 +52,11 @@ export class Event{
     })
   }
 
+  addBoxShadow(){
+    document.querySelector('#artist-info-container')
+      .style.boxShadow = '0 4px 6px 0 hsla(0,0%,0%,0.2)'
+  }
+
   toggleSort() {
     const sorts = document.querySelectorAll('.middle-titles > i')
     sorts.forEach((icon) => {
@@ -70,6 +75,7 @@ export class Event{
   getTableInfo(){
     let table = document.querySelector('#table-content');
     table.addEventListener('click', (e) => {
+      this.addBoxShadow();
       if (e.target.classList.contains('fa-trash') && e.target.classList.contains('remove')) {
         let deleted = e.target.parentElement.parentElement
         util.updateSessionStorage(deleted);
