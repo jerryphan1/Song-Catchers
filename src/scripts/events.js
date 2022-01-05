@@ -82,7 +82,7 @@ export class Event{
         deleted.remove()
       } else if (!e.target.classList.contains('middle-titles') && !e.target.classList.contains('fa-sort')) {
         const tr = e.target.parentElement;
-        this.checkRightBox();
+        this.updateRightWidth();
         // id is the table id
         if (!tr.id) {
           const artist = tr.querySelector('.artist').innerText;
@@ -112,13 +112,27 @@ export class Event{
     })
   }
 
-  checkRightBox(){
+  updateRightWidth(){
     let rightDiv = document.querySelector('#artist-info-container')
     let left = document.querySelector('.left-container')
     if (left.classList.contains('left-container-collapse') && 
     rightDiv.innerText === "") {
     rightDiv.style.width = '38%'
     }
+  }
+
+  updateMiddleWidth(){
+    let left = document.querySelector('.left-container')
+    let rightDiv = document.querySelector('#artist-info-container')
+    let middleDiv = document.querySelector('#middle-container')
+    left.addEventListener('click', (e) => {
+      if (left.classList.contains('left-container-collapse') && 
+      rightDiv.innerText === "") {
+        middleDiv.style.width = '88%'
+      } else {
+        middleDiv.style.width = '55%'
+      }
+    })
   }
 
   startAllEvents(){
@@ -128,6 +142,7 @@ export class Event{
     this.getTableInfo();
     this.collapseLeftSide();
     this.checkLeftCollapse();
+    this.updateMiddleWidth();
   }
 
 }

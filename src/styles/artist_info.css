@@ -1,11 +1,10 @@
 #artist-info-container {
   display: flex;
   background-color: rgba(255, 255, 255, 0.733);
-  /* box-shadow: 0 4px 6px 0 hsla(0,0%,0%,0.2); */
   flex-direction: column;
   margin: 0px auto;
   width: 28%;
-  transition: width 0.5s;
+  transition: width 0.3s;
 }
 
 
@@ -61,8 +60,9 @@
 #artist-info-bottom > div{
   display: flex;
   flex-direction: column;
-  text-align: center;
-  width: 100%;
+  text-align: left;
+  margin-left: 20px;
+  width: 95%;
 }
 
 #song-lyrics{
@@ -91,13 +91,13 @@
 .top-songs{
   overflow: hidden;
   text-overflow: clip;
-  padding-left: 22px;
+  /* padding-left: 22px; */
 }
 
 .common-artists{
   overflow: hidden;
   text-overflow: clip;
-  padding-left: 24px;
+  /* padding-left: 24px; */
 }
 
 .top-songs > li, .common-artists > li{
