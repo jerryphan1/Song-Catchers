@@ -21,6 +21,8 @@
   width: 98%;
   background-color: rgba(255, 255, 255, 0.733);
   transition: width 0.3s;
+  font-family: 'Source Sans 3', sans-serif;
+
 }
 
 .content {
@@ -131,7 +133,7 @@
 .middle-titles{
   margin: 0px 0px;
   width: 100%;
-  font-weight: 550;
+  font-weight: 600;
   border: none;
   border-bottom: 1px solid black;
 
@@ -146,7 +148,7 @@
 }
 
 .title{
-  font-weight: 550;
+  font-weight: 590;
 }
 
 .artist, .date{

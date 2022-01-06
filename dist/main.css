@@ -118,6 +118,7 @@ footer{
 
 .nav-label{
   color:white;
+  font-family: 'Nunito', sans-serif;
 }
 
 .collapsible, .collapse-left{
@@ -275,6 +276,8 @@ footer{
   width: 98%;
   background-color: rgba(255, 255, 255, 0.733);
   transition: width 0.3s;
+  font-family: 'Source Sans 3', sans-serif;
+
 }
 
 .content {
@@ -385,7 +388,7 @@ footer{
 .middle-titles{
   margin: 0px 0px;
   width: 100%;
-  font-weight: 550;
+  font-weight: 600;
   border: none;
   border-bottom: 1px solid black;
 
@@ -400,7 +403,7 @@ footer{
 }
 
 .title{
-  font-weight: 550;
+  font-weight: 590;
 }
 
 .artist, .date{
@@ -421,6 +424,7 @@ footer{
   width: 0%;
   transition: width 0.3s;
   height: 130vh;
+  font-family: 'Source Sans 3', sans-serif;
 }
 
 
@@ -537,6 +541,7 @@ footer{
   opacity: 0.75;
   margin: 5px 3px;
   margin-left: 2px;
+  padding-top: 3px;
   text-align: left;
   color: #574949;
 }
