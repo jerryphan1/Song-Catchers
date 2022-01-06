@@ -25,6 +25,7 @@
   border-radius: 50%;
   margin: 10px;
   box-shadow: 0 4px 10px 0 hsla(0,0%,0%,0.3);
+  background-color: black;
   /* background-size: cover;
   background-position: center center; */
 }

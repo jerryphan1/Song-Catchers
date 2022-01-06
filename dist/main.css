@@ -423,6 +423,7 @@ footer{
   animation: music-flip-1 1.7s linear infinite; 
 }
 
+
 .music-2{
   color: rgb(46, 131, 235);
   animation: music-flip-2 1.5s linear infinite; 
@@ -480,6 +481,7 @@ footer{
   border-radius: 50%;
   margin: 10px;
   box-shadow: 0 4px 10px 0 hsla(0,0%,0%,0.3);
+  background-color: black;
   /* background-size: cover;
   background-position: center center; */
 }
