@@ -140,9 +140,8 @@ export class Util {
   }
 
   async addLyrics(artist,title){
-    this.clearLyrics()
     let lyrics = await fetch.getSongLyrics(artist,title)
-    console.log(lyrics)
+    this.clearLyrics()
     let lyricContainer = document.querySelector('#song-lyrics')
     let titleP = document.createElement('p')
     let lyricsP = document.createElement('p')
@@ -189,7 +188,7 @@ export class Util {
     this.clearArtistInfoBottom();
     this.addArtistInfo(artistInfo);
     this.addArtistTracks(artistTracks);
-    this.addRelatedArtists(relatedArtists)
+    this.addRelatedArtists(relatedArtists);
   }
 
 }

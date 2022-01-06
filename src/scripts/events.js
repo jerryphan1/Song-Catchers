@@ -115,8 +115,8 @@ export class Event{
           const artist = tr.querySelector('.artist').innerText;
           const title = tr.querySelector('.title').innerText;
           const artistId = tr.querySelector('.hide-artist-id').innerText;
-          util.fillArtistInfo(artistId,artist,title)
-          util.addLyrics(artist,title)
+          util.fillArtistInfo(artistId,artist,title);
+          util.addLyrics(artist,title);
         }
       }
     })
@@ -162,10 +162,6 @@ export class Event{
     const aboutSpan = document.getElementsByClassName("about-close")[0];
     const instructSpan = document.getElementsByClassName("instruct-close")[0];
 
-    // When the user clicks on the button, open the modal
-    // btn.onclick = function() {
-    //   modal.style.display = "block";
-    // }
 
     AboutBtn.addEventListener(('click'), () => {
       aboutModal.style.display = "block";
@@ -184,11 +180,6 @@ export class Event{
       instructModal.style.display = "none";
     })
 
-    // When the user clicks on <span> (x), close the modal
-    // span.onclick = function() {
-    //   modal.style.display = "none";
-    // }
-
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
       if (event.target == aboutModal) {
@@ -197,17 +188,6 @@ export class Event{
         instructModal.style.display = "none";
       }
     }
-  }
-
-  secretCode(){
-    let easterEgg = 'valkyrae';
-    let eggLength = easterEgg.length;
-
-    let keyHistory = '';
-    let match;
-    document.addEventListener(('keypress'), (e) => {
-      keyHistory += String.fromCharCode(e.which)
-    })
   }
 
   startAllEvents(){
