@@ -436,6 +436,8 @@ footer{
   border-radius: 50%;
   margin: 10px;
   box-shadow: 0 4px 10px 0 hsla(0,0%,0%,0.3);
+  background-size: cover;
+  background-position: center center;
 }
 
 .artist-basics {
@@ -664,6 +666,7 @@ footer{
   border: 0.5px solid #888;
   border-radius: 5px;
   width: 50%; /* Could be more or less, depending on screen size */
+  /* font-family: ; */
 }
 
 #instruct-container{
