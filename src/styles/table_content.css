@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.title-icons{
+  margin: 50px;
+}
+
 .remove:hover{
   transform: scale(1.2);
 }
@@ -157,4 +161,37 @@
 
 .hide-artist-id {
   display: none
+}
+
+.music-1{
+  color: rgb(121, 110, 148);
+  animation: music-flip-1 1.7s linear infinite; 
+}
+
+.music-2{
+  color: rgb(46, 131, 235);
+  animation: music-flip-2 1.5s linear infinite; 
+}
+
+
+@keyframes music-flip-1 {
+  from {
+    color: rgb(63, 46, 107);
+    transform: rotateY(0deg);
+  }
+  to {
+    color: rgb(15, 175, 68);
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes music-flip-2 {
+  from {
+    color: rgb(176, 162, 212);
+    transform: rotate(0deg);
+  }
+  to {
+    color: rgb(241, 35, 21);
+    transform: rotate(360deg);
+  }
 }
