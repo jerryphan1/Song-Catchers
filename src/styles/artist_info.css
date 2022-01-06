@@ -16,14 +16,16 @@
 }
 
 .artist-pic {
-  height: 140px;
-  width: 140px;
+  height: 100%; 
+  width: 100%; 
+  max-width: 140px; 
+  max-height: 140px;
   object-fit: contain;
   border-radius: 50%;
   margin: 10px;
   box-shadow: 0 4px 10px 0 hsla(0,0%,0%,0.3);
-  background-size: cover;
-  background-position: center center;
+  /* background-size: cover;
+  background-position: center center; */
 }
 
 .artist-basics {

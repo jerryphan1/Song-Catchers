@@ -199,6 +199,17 @@ export class Event{
     }
   }
 
+  secretCode(){
+    let easterEgg = 'valkyrae';
+    let eggLength = easterEgg.length;
+
+    let keyHistory = '';
+    let match;
+    document.addEventListener(('keypress'), (e) => {
+      keyHistory += String.fromCharCode(e.which)
+    })
+  }
+
   startAllEvents(){
     this.collapseLeftBar()
     this.submitSong();

@@ -4,6 +4,7 @@
   /* box-shadow: 0 4px 10px 0 hsla(0,0%,0%,0.3); */
   background-color: #eceaea;
   width: 100%;
+  font-family: 'Source Sans 3', sans-serif;
 }
 
 #instruct-h2{
@@ -46,6 +47,7 @@
   border-radius: 5px;
   width: 50%; /* Could be more or less, depending on screen size */
   /* font-family: ; */
+  font-family: 'Source Sans 3', sans-serif;
 }
 
 #instruct-container{
