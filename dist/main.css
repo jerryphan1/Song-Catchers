@@ -541,7 +541,7 @@ footer{
 }
 
 #song-lyrics  p:first-child{
-  font-size: 24px;
+  font-size: 18px;
   margin-top: 15px;
   text-align: center;
   font-weight: 600px;
@@ -556,7 +556,7 @@ footer{
   margin-top: 13px;
   padding-bottom: 10px;
   padding-left: 15px;
-  height: 30vh;
+  height: 29vh;
   width: 97%;
   overflow-y: scroll;
   text-align: center;
