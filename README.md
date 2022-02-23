@@ -39,30 +39,5 @@ In addition, this project will include:
 - [Webpack](https://webpack.js.org/)
 - [NPM](https://www.npmjs.com/)
 
-## Implementation Timeline
 
-### Day 1-2 Jan 1st-2nd:
 
-Research using technologies, set up webpack, and get CSS/HTML working.
-
-### Day 3 Jan 3rd:
-
-Create working searchbar with lyrics.ovh.
-
-### Day 4 Jan 4th:
-
-Implement Spotify API that queries data based off returned songs.
-
-### Day 5 Jan 5th:
-
-Implement D3 with working graph that displays song history alongside total listens. 
-
-### Day 6 Jan 6th:
-
-Ensure working links and toggle features.
-
-## Bonus
-
-- View song popularity over time
-- Save songs to local account 
-- Mobile friendly
