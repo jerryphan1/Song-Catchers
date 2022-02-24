@@ -563,6 +563,7 @@ footer{
   text-align: center;
 }
 
+
 #song-lyrics  p:first-child{
   font-size: 18px;
   margin-top: 15px;
@@ -583,6 +584,8 @@ footer{
   width: 97%;
   overflow-y: scroll;
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.2);
+
   /* overflow: scroll; */
 }
 
