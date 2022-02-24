@@ -102,6 +102,11 @@
   animation: linkedin-flip 2s ease-in-out infinite; 
 }
 
+
+.fa-angellist:hover{
+  animation: angel-flip 2s ease-in-out infinite; 
+}
+
 .fa-github:hover {
   animation: git-flip 2s ease-in-out infinite; 
 }
@@ -149,5 +154,23 @@
   100% {
     transform: rotateY(360deg); 
     color: rgba(40, 103, 178,0.75);
+  } 
+}
+
+@keyframes angel-flip {
+  0% {
+    transform: rotateY(0deg); 
+  }
+  33%{
+    transform: rotateY(90deg); 
+  }
+  50% {
+    transform: rotateY(180deg); 
+  }
+  67%{
+    transform: rotateY(180deg); 
+  }
+  100% {
+    transform: rotateY(360deg); 
   } 
 }
